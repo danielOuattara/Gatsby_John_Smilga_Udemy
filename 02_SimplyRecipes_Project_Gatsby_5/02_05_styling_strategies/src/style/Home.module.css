@@ -3,9 +3,11 @@
 }
 
 .page h1 {
-    color: fuchsia;
+  color: fuchsia;
 }
 
 .text {
   text-transform: capitalize;
+  font-weight: 700;
+
 }
