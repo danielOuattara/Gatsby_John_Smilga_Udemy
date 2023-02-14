@@ -2,7 +2,7 @@ import * as React from "react";
 import Layout from "./../components/Layout";
 import { StaticImage } from "gatsby-plugin-image";
 // import { Link } from "gatsby";
-import FetchData from "./../components/examples/FetchData";
+// import FetchData from "./../components/examples/FetchData";
 
 export default function Home() {
   return (
@@ -13,7 +13,7 @@ export default function Home() {
             src="./../assets/images/main.jpeg"
             alt="banner"
             className="hero-img"
-            placeholder="tracedSVG"
+            placeholder="blurred"
             layout="fullWidth"
           />
           <div className="hero-container">
@@ -23,7 +23,7 @@ export default function Home() {
             </div>
           </div>
         </header>
-        <FetchData />
+        {/* <FetchData /> */}
       </main>
     </Layout>
   );

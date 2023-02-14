@@ -18,11 +18,10 @@ module.exports = {
         path: `${__dirname}/src/assets/images`,
       },
     },
+
     {
       resolve: `gatsby-plugin-styled-components`,
-      options: {
-        // Add any options here
-      },
+      options: {},
     },
     `gatsby-plugin-image`,
     `gatsby-plugin-sharp`,
