@@ -1,6 +1,10 @@
 import React from "react";
-import Navbar from "./../components/Navbar";
+import Layout from "../components/Layout";
 
 export default function Contact() {
-  return <Navbar>Contact</Navbar>;
+  return (
+    <Layout>
+      <h1>Contact</h1>
+    </Layout>
+  );
 }

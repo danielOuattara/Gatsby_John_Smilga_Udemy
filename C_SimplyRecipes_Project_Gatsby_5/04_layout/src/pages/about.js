@@ -2,5 +2,9 @@ import React from "react";
 import Layout from "../components/Layout";
 
 export default function About() {
-  return <Layout>About</Layout>;
+  return (
+    <Layout>
+      <h1>About page</h1>
+    </Layout>
+  );
 }

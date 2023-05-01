@@ -1,10 +1,11 @@
 import * as React from "react";
-
+import Navbar from "./Navbar";
 const Header = () => {
   return (
-    <footer>
+    <header>
       <h2>Hello from header</h2>
-    </footer>
+      <Navbar />
+    </header>
   );
 };
 
