@@ -8,25 +8,25 @@ export default function About() {
     <Layout>
       <main className="page">
         <section className="about-page">
-          <article>
-            <h2>Lorem ipsum dolor sit amet consectetur adipisicing elit.</h2>
+          <article className="">
+            <h2>Lorem ipsum dolor sit amet consectetur. Ut, enim!</h2>
             <p>
-              Lorem ipsum dolor sit amet consectetur? Nulla reiciendis
-              dignissimos iure non, nihil earum ratione aspernatur velit
-              quibusdam
+              Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+              Voluptatum sit animi in natus quidem quod sequi hic non
+              reprehenderit autem.
             </p>
             <p>
-              Lorem ipsum dolor sit amet consectetur Nostrum quia libero dolores
-              quibusdam necessitatibus expedita voluptate repellat?
+              Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+              Voluptatum sit animi in natus quidem quod sequi hic non
+              reprehenderit autem.
             </p>
-            <p></p>
             <Link to="/contact" className="btn">
               contact
             </Link>
           </article>
           <StaticImage
+            alt="person poring salt in food bowl"
             src="./../assets/images/about.jpeg"
-            alt="person pouring salt"
             className="about-img"
             placeholder="blurred"
           />
