@@ -4,6 +4,7 @@
 ::after,
 ::before {
     box-sizing: border-box;
+
 }
 
 :root {
@@ -421,6 +422,7 @@ form>*:last-child {
 
 .active-link {
     color: var(--primary-500);
+    border-bottom: 3px solid var(--primary-500);
 }
 
 .contact-link {

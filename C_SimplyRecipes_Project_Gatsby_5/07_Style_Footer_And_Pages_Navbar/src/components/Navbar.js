@@ -3,6 +3,8 @@ import { Link } from "gatsby";
 import { FiAlignJustify } from "react-icons/fi";
 import logo from "./../assets/images/logo.svg";
 
+const navBarItems = ["home", "recipes", "tags", "about", "contact"];
+
 const Navbar = () => {
   const [showLinks, setShowLinks] = useState(false);
 
@@ -18,41 +20,18 @@ const Navbar = () => {
           </button>
         </div>
         <div className={showLinks ? "show-links nav-links" : " nav-links"}>
-          <Link
-            to="/"
-            className="nav-link"
-            activeClassName="active-link"
-            onClick={() => setShowLinks(false)}
-          >
-            Home
-          </Link>
+          {navBarItems.map((item) => (
+            <Link
+              key={item}
+              to={item === "home" ? "/" : `/${item}`}
+              className="nav-link"
+              activeClassName="active-link"
+              onClick={() => setShowLinks(false)}
+            >
+              {item[0].toUpperCase() + item.slice(1)}
+            </Link>
+          ))}
 
-          <Link
-            to="/recipes"
-            className="nav-link"
-            activeClassName="active-link"
-            onClick={() => setShowLinks(false)}
-          >
-            Recipes
-          </Link>
-
-          <Link
-            to="/tags"
-            className="nav-link"
-            activeClassName="active-link"
-            onClick={() => setShowLinks(false)}
-          >
-            Tags
-          </Link>
-
-          <Link
-            to="/about"
-            className="nav-link"
-            activeClassName="active-link"
-            onClick={() => setShowLinks(false)}
-          >
-            About
-          </Link>
           <div className="nav-link contact-link">
             <Link
               to="/contact"
