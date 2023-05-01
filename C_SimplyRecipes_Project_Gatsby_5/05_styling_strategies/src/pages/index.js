@@ -1,7 +1,7 @@
 import * as React from "react";
 import Layout from "./../components/Layout";
 import { page, text } from "./../style/Home.module.css";
-import { ExampleButton } from "../styled-component/ExampleButton";
+import { ExampleButton } from "../styled-components/ExampleButton";
 
 export default function Home() {
   return (
@@ -10,7 +10,9 @@ export default function Home() {
         <h1 style={{ color: "green", textTransform: "capitalize" }}>
           Hello world!{" "}
         </h1>
-        <ExampleButton>Click on Button Styled Component</ExampleButton>
+        <ExampleButton type="button" onClick={() => alert("Clicked !")}>
+          Click on Button Styled Component
+        </ExampleButton>
         <h2 className="home-heading">Hello world Again! </h2>
         <p className={(page, text)}>
           Lorem ipsum dolor sit amet consectetur, adipisicing elit. Culpa

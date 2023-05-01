@@ -1,9 +1,10 @@
 .page {
   color: grey;
-  background-color: white;
+  background-color: black;
+  padding: 2rem;
 }
 
-.page h1 {
+.page {
   color: olivedrab;
 }
 
