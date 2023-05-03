@@ -15,16 +15,16 @@ module.exports = {
     {
       resolve: `gatsby-source-filesystem`,
       options: {
-        name: `images`, // The unique name for each instance
-        path: `${__dirname}/src/assets/images`, // Path to the directory
+        // The unique name for each instance
+        name: `images`,
+        // Path to the directory
+        path: `${__dirname}/src/assets/images`,
       },
     },
+
     {
-      resolve: `gatsby-source-filesystem`,
-      options: {
-        name: `examples`, // The unique name for each instance
-        path: `${__dirname}/src/components/examples`, // Path to the directory
-      },
+      resolve: `gatsby-plugin-styled-components`,
+      options: {},
     },
   ],
   siteMetadata: {
