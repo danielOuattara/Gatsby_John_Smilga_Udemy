@@ -1,7 +1,8 @@
 // import * as React from "react";
 // import { useStaticQuery, graphql } from "gatsby";
 
-// // /* Testing useStaticQuery() ---------------*/
+/* Testing useStaticQuery() 
+-----------------------------*/
 
 // export default function FetchData() {
 //   const data = useStaticQuery(graphql`
@@ -28,9 +29,10 @@
 //       }
 //     }
 //   `);
-//   //   return <pre>{JSON.stringify(data, null, 2)}</pre>;
+//   // return <pre>{JSON.stringify(data, null, 2)}</pre>;
 
-//   // console.log("data ==> ", data);
+//   console.log("data ==> ", data);
+
 //   return (
 //     <div>
 //       <h2>{data.site.siteMetadata.author.name}</h2>
@@ -49,6 +51,9 @@
 
 import React from "react";
 import { useStaticQuery, graphql } from "gatsby";
+
+/* Testing useStaticQuery() 
+-----------------------------*/
 
 const graphqlQuery = graphql`
   query SiteData {

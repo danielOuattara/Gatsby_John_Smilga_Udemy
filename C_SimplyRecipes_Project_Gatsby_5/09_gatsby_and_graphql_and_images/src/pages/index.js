@@ -2,7 +2,7 @@ import * as React from "react";
 import Layout from "./../components/Layout";
 // import ImagesExample1 from "../components/examples/ImagesExample1";
 // import ImagesExample2 from "../components/examples/ImagesExample2";
-// import FetchData from "../components/examples/FetchData";
+import FetchData from "../components/examples/FetchData";
 import { StaticImage } from "gatsby-plugin-image";
 
 export default function Home() {
@@ -25,11 +25,11 @@ export default function Home() {
               </div>
             </div>
           </header>
-          {/* <FetchData /> */}
+          {/* <ImagesExample1 /> */}
+          {/* <ImagesExample2 /> */}
+          <FetchData />
         </main>
       </Layout>
-      {/* <ImagesExample1 /> */}
-      {/* <ImagesExample2 /> */}
     </div>
   );
 }

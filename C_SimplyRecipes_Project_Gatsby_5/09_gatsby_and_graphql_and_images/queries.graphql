@@ -1,0 +1,61 @@
+query MyQuery($limit: Int) {
+  allFile(limit: $limit, sort: { name: ASC, size: ASC }) {
+    totalCount
+    nodes {
+      name
+      size
+    }
+  }
+}
+
+# -------------------------------------------
+
+query MyQuery {
+  file(relativePath: { eq: "recipes/recipe-1.jpeg" }) {
+    name
+    relativePath
+    size
+    relativeDirectory
+    publicURL
+  }
+}
+
+# --------------------------------------------
+
+query MyQuery($limit: Int) {
+  allFile(
+    limit: $limit
+    sort: {size: DESC}
+    filter: {relativeDirectory: {eq: "recipes"}}
+  ) {
+    totalCount
+    nodes {
+      name
+      size
+    }
+  }
+}
+
+
+# --------------------------------------------
+
+query MyQuery {
+  allFile(
+    filter: {
+      sourceInstanceName: { eq: "images" }
+      relativeDirectory: { eq: "recipes" }
+    }
+  ) {
+    totalCount
+    nodes {
+      name
+      childImageSharp {
+        gatsbyImageData(
+          layout: FIXED
+          placeholder: BLURRED
+          transformOptions: { grayscale: true }
+        )
+      }
+    }
+  }
+}
