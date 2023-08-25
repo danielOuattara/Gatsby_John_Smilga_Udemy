@@ -274,7 +274,7 @@ button.block {
 }
 
 .page {
-    width: 90vw;
+    width: 85vw;
     max-width: var(--max-width);
     margin: 0 auto;
 }

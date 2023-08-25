@@ -1,5 +1,6 @@
 import * as React from "react";
 import Layout from "./../components/Layout";
+
 // import ImagesExample1 from "../components/examples/ImagesExample1";
 // import ImagesExample2 from "../components/examples/ImagesExample2";
 
@@ -25,10 +26,12 @@ export default function Home() {
               </div>
             </div>
           </header>
+          {/* ---------------------- */}
+          {/* <ImagesExample1 /> */}
+          {/* <ImagesExample2 /> */}
+          {/* ---------------------- */}
         </main>
       </Layout>
-      {/* <ImagesExample1 /> */}
-      {/* <ImagesExample2 /> */}
     </div>
   );
 }
