@@ -1,5 +1,6 @@
 import React from "react";
 import setupTags from "../utils/setupTag";
+import titleToSlug from "../utils/titleToSlug";
 import { Link } from "gatsby";
 
 export default function TagsList(props) {
@@ -9,7 +10,7 @@ export default function TagsList(props) {
       <h4>recipes</h4>
       <div className="tags-list">
         {tags.map((item) => (
-          <Link key={item[0]} to={`/tags/${item[0]}`}>
+          <Link key={item[0]} to={`/tags/${titleToSlug(item[0])}`}>
             {item[0]} ({item[1]})
           </Link>
         ))}

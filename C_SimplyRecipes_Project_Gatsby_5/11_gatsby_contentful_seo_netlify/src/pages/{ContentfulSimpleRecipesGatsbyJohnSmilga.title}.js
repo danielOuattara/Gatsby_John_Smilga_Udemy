@@ -3,6 +3,7 @@ import { graphql, Link } from "gatsby";
 import { GatsbyImage, getImage } from "gatsby-plugin-image";
 import { BsClockHistory, BsClock, BsPeople } from "react-icons/bs";
 import Layout from "./../components/Layout";
+import titleToSlug from "../utils/titleToSlug";
 
 //-------------------------------------------------
 export const query = graphql`
@@ -30,9 +31,7 @@ export const query = graphql`
 `;
 
 export default function RecipeTemplate(props) {
-  // console.log(props);
   const recipe = props.data.contentfulSimpleRecipesGatsbyJohnSmilga;
-  console.log(recipe);
   return (
     <Layout>
       <main className="page">
@@ -68,7 +67,7 @@ export default function RecipeTemplate(props) {
               <p className="recipe-tags">
                 Tags:
                 {recipe.content.tags.map((tag) => (
-                  <Link key={tag} to={`/tags/${tag}`}>
+                  <Link key={tag} to={`/tags/${titleToSlug(tag)}`}>
                     {tag}
                   </Link>
                 ))}

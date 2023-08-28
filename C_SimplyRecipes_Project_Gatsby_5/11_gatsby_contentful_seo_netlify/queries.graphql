@@ -1,9 +1,17 @@
-query MyQuery($limit: Int) {
-  allFile(limit: $limit, sort: { name: ASC, size: ASC }) {
-    totalCount
+
+query MyQuery {
+  allContentfulSimpleRecipesGatsbyJohnSmilga(sort: { title: ASC }) {
     nodes {
-      name
-      size
+      id
+      title
+      cookingTime
+      preparationTime
+      content {
+        tags
+      }
+      image {
+        gatsbyImageData(layout: CONSTRAINED, placeholder: TRACED_SVG)
+      }
     }
   }
 }
@@ -11,51 +19,80 @@ query MyQuery($limit: Int) {
 # -------------------------------------------
 
 query MyQuery {
-  file(relativePath: { eq: "recipes/recipe-1.jpeg" }) {
-    name
-    relativePath
-    size
-    relativeDirectory
-    publicURL
-  }
-}
-
-# --------------------------------------------
-
-query MyQuery($limit: Int) {
-  allFile(
-    limit: $limit
-    sort: {size: DESC}
-    filter: {relativeDirectory: {eq: "recipes"}}
+  allContentfulSimpleRecipesGatsbyJohnSmilga(
+    filter: { featured: { eq: true } }
+    sort: { title: ASC }
   ) {
     totalCount
     nodes {
-      name
-      size
-    }
-  }
-}
-
-
-# --------------------------------------------
-
-query MyQuery {
-  allFile(
-    filter: {
-      sourceInstanceName: { eq: "images" }
-      relativeDirectory: { eq: "recipes" }
-    }
-  ) {
-    totalCount
-    nodes {
-      name
-      childImageSharp {
-        gatsbyImageData(
-          layout: FIXED
-          placeholder: BLURRED
-          transformOptions: { grayscale: true }
-        )
+      id
+      title
+      cookingTime
+      preparationTime
+      image {
+        gatsbyImageData(layout: CONSTRAINED, placeholder: BLURRED)
       }
     }
   }
 }
+
+# --------------------------------------------
+
+query getSingleRecipe($title: String) {
+  contentfulSimpleRecipesGatsbyJohnSmilga(title: { eq: $title }) {
+    id
+    title
+    servings
+    cookingTime
+    preparationTime
+    description {
+      description
+    }
+    content {
+      ingredients
+      instructions
+      tags
+      tools
+    }
+    image {
+      gatsbyImageData(layout: CONSTRAINED, placeholder: TRACED_SVG)
+    }
+  }
+}
+
+{"title": "Greeks Ribs"}
+
+# --------------------------------------------
+
+query MyQuery {
+  allContentfulSimpleRecipesGatsbyJohnSmilga{
+    totalCount
+    nodes {
+      id
+      content {
+        tags
+      }
+
+    }
+  }
+}
+
+# --------------------------------------------
+
+query MyQuery {
+  allContentfulSimpleRecipesGatsbyJohnSmilga {
+    nodes {
+      title
+    }
+  }
+}
+
+
+# --------------------------------------------
+
+
+# --------------------------------------------
+
+
+# --------------------------------------------
+

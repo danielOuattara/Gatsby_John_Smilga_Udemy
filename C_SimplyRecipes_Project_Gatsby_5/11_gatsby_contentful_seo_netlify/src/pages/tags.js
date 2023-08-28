@@ -2,6 +2,7 @@ import * as React from "react";
 import Layout from "../components/Layout";
 import { graphql, Link } from "gatsby";
 import setupTags from "../utils/setupTag";
+import titleToSlug from "../utils/titleToSlug";
 
 export const query = graphql`
   query {
@@ -25,7 +26,11 @@ export default function Tag(props) {
       <main className="page">
         <section className="tags-page">
           {tags.map((item) => (
-            <Link key={item[0]} to={`/tags/${item[0]}`} className="tag">
+            <Link
+              key={item[0]}
+              to={`/tags/${titleToSlug(item[0])}`}
+              className="tag"
+            >
               <h5>{item[0]}</h5>
               <p>
                 {item[1]}
