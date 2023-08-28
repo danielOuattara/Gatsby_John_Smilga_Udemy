@@ -47,7 +47,11 @@ export default function Contact(props) {
             </p>
           </article>
           <article>
-            <form className="form contact-form">
+            <form
+              className="form contact-form"
+              action="https://formspree.io/f/myyqwqyj"
+              method="POST"
+            >
               <div className="form-row">
                 <label htmlFor="name"> name</label>
                 <input type="text" name="name" id="name" />
