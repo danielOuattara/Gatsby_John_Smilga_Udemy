@@ -17,7 +17,7 @@ export const query = graphql`
         preparationTime
         cookingTime
         image {
-          gatsbyImageData(layout: CONSTRAINED, placeholder: TRACED_SVG)
+          gatsbyImageData(layout: CONSTRAINED, placeholder: BLURRED)
         }
       }
     }
