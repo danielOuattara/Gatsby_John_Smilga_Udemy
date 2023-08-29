@@ -481,10 +481,10 @@ form>*:last-child {
 /*#########*/
 .page-footer {
     text-align: center;
-    height: 4rem;
+    height: 6rem;
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: space-around;
     background: var(--black);
     color: var(--white);
 }
@@ -499,7 +499,7 @@ form>*:last-child {
 
 .page-footer span,
 .page-footer a {
-    color: var(--primary-500);
+    color: var(--primary-400);
 }
 
 /*#########*/
