@@ -3,7 +3,7 @@ import Layout from "./../components/Layout";
 import { StaticImage } from "gatsby-plugin-image";
 import { Link, graphql } from "gatsby";
 import RecipesList from "../components/RecipesList";
-import SEO from "../components/SEO";
+import Seo from "../components/Seo";
 
 export const query = graphql`
   query {
@@ -31,7 +31,7 @@ export default function About(props) {
 
   return (
     <Layout>
-      <SEO
+      <Seo
         title="About Page"
         description="This is description for the about page"
       />

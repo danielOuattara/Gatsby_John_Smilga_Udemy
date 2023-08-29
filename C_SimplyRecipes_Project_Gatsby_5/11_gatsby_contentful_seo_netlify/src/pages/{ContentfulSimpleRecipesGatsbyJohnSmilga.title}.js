@@ -4,6 +4,7 @@ import { GatsbyImage, getImage } from "gatsby-plugin-image";
 import { BsClockHistory, BsClock, BsPeople } from "react-icons/bs";
 import Layout from "./../components/Layout";
 import titleToSlug from "../utils/titleToSlug";
+import Seo from "../components/Seo";
 
 //-------------------------------------------------
 export const query = graphql`
@@ -34,6 +35,10 @@ export default function RecipeTemplate(props) {
   const recipe = props.data.contentfulSimpleRecipesGatsbyJohnSmilga;
   return (
     <Layout>
+      <Seo
+        title={recipe.title}
+        description={recipe.description.description || null}
+      />
       <main className="page">
         <div className="recipe-page">
           <section className="recipe-hero">

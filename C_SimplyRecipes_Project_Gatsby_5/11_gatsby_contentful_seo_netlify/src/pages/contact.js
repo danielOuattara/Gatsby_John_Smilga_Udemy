@@ -2,6 +2,7 @@ import React from "react";
 import Layout from "../components/Layout";
 import { graphql } from "gatsby";
 import RecipesList from "../components/RecipesList";
+import Seo from "../components/Seo";
 
 export const query = graphql`
   query {
@@ -28,6 +29,7 @@ export default function Contact(props) {
     props.data.allContentfulSimpleRecipesGatsbyJohnSmilga.nodes;
   return (
     <Layout>
+      <Seo title="Contact Page" />
       <main className="page">
         <section className="contact-page">
           <article className="contact-info">

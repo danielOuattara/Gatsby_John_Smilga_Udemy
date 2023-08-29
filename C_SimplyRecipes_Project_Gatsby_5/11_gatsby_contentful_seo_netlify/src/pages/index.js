@@ -3,16 +3,16 @@ import Layout from "./../components/Layout";
 import FetchData from "../components/examples/FetchData";
 import { StaticImage } from "gatsby-plugin-image";
 import AllRecipes from "../components/AllRecipes";
-import SEO from "../components/SEO";
+import Seo from "../components/Seo";
+import { useLocation } from "@reach/router";
 
 export default function Home() {
+  const location = useLocation();
+  console.log("location = ", location);
   return (
     <div>
       <Layout>
-        <SEO
-          title="Home Page"
-          description="This is description for the home page"
-        />
+        <Seo title="Home Page" description={null} />
         <main className="page">
           <header className="hero">
             <StaticImage
