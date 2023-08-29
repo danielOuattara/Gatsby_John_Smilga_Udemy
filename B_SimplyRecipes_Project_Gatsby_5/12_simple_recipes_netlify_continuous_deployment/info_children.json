@@ -1,0 +1,228 @@
+{
+  "data": {
+    "allFile": {
+      "nodes": [
+        {
+          "childrenImageSharp": []
+        },
+        {
+          "childrenImageSharp": [
+            {
+              "id": "00628952-a3fb-5f02-97ee-1cee89a0f4e1",
+              "gatsbyImageData": {
+                "layout": "constrained",
+                "backgroundColor": "#181818",
+                "images": {
+                  "fallback": {
+                    "src": "/static/68fad25b8b67779c27486ff37425cc1c/0cb03/about.jpg",
+                    "srcSet": "/static/68fad25b8b67779c27486ff37425cc1c/2579c/about.jpg 250w,\n/static/68fad25b8b67779c27486ff37425cc1c/2ff65/about.jpg 500w,\n/static/68fad25b8b67779c27486ff37425cc1c/0cb03/about.jpg 1000w",
+                    "sizes": "(min-width: 1000px) 1000px, 100vw"
+                  },
+                  "sources": [
+                    {
+                      "srcSet": "/static/68fad25b8b67779c27486ff37425cc1c/1c893/about.webp 250w,\n/static/68fad25b8b67779c27486ff37425cc1c/316df/about.webp 500w,\n/static/68fad25b8b67779c27486ff37425cc1c/b3e07/about.webp 1000w",
+                      "type": "image/webp",
+                      "sizes": "(min-width: 1000px) 1000px, 100vw"
+                    }
+                  ]
+                },
+                "width": 1000,
+                "height": 1500
+              }
+            }
+          ]
+        },
+        {
+          "childrenImageSharp": [
+            {
+              "id": "2dc78389-a0a4-5986-9b90-67a3a905586a",
+              "gatsbyImageData": {
+                "layout": "constrained",
+                "backgroundColor": "#080808",
+                "images": {
+                  "fallback": {
+                    "src": "/static/8dcb6bff31d873a27b626d006dda9a98/826b9/main.jpg",
+                    "srcSet": "/static/8dcb6bff31d873a27b626d006dda9a98/99f43/main.jpg 250w,\n/static/8dcb6bff31d873a27b626d006dda9a98/26cfb/main.jpg 500w,\n/static/8dcb6bff31d873a27b626d006dda9a98/826b9/main.jpg 1000w",
+                    "sizes": "(min-width: 1000px) 1000px, 100vw"
+                  },
+                  "sources": [
+                    {
+                      "srcSet": "/static/8dcb6bff31d873a27b626d006dda9a98/48571/main.webp 250w,\n/static/8dcb6bff31d873a27b626d006dda9a98/921bf/main.webp 500w,\n/static/8dcb6bff31d873a27b626d006dda9a98/323e8/main.webp 1000w",
+                      "type": "image/webp",
+                      "sizes": "(min-width: 1000px) 1000px, 100vw"
+                    }
+                  ]
+                },
+                "width": 1000,
+                "height": 666
+              }
+            }
+          ]
+        },
+        {
+          "childrenImageSharp": [
+            {
+              "id": "e84baa86-e7cc-5dec-ae8a-d9356e9fd825",
+              "gatsbyImageData": {
+                "layout": "constrained",
+                "backgroundColor": "#281808",
+                "images": {
+                  "fallback": {
+                    "src": "/static/1fcdd9a74ecd6dbc4513e4e48bd2b0d2/1b035/recipe-1.jpg",
+                    "srcSet": "/static/1fcdd9a74ecd6dbc4513e4e48bd2b0d2/99f43/recipe-1.jpg 250w,\n/static/1fcdd9a74ecd6dbc4513e4e48bd2b0d2/28380/recipe-1.jpg 500w,\n/static/1fcdd9a74ecd6dbc4513e4e48bd2b0d2/1b035/recipe-1.jpg 1000w",
+                    "sizes": "(min-width: 1000px) 1000px, 100vw"
+                  },
+                  "sources": [
+                    {
+                      "srcSet": "/static/1fcdd9a74ecd6dbc4513e4e48bd2b0d2/48571/recipe-1.webp 250w,\n/static/1fcdd9a74ecd6dbc4513e4e48bd2b0d2/76f01/recipe-1.webp 500w,\n/static/1fcdd9a74ecd6dbc4513e4e48bd2b0d2/b7ef5/recipe-1.webp 1000w",
+                      "type": "image/webp",
+                      "sizes": "(min-width: 1000px) 1000px, 100vw"
+                    }
+                  ]
+                },
+                "width": 1000,
+                "height": 667
+              }
+            }
+          ]
+        },
+        {
+          "childrenImageSharp": [
+            {
+              "id": "e1ad0feb-8538-5ef5-95d4-dc6d1182dbfe",
+              "gatsbyImageData": {
+                "layout": "constrained",
+                "backgroundColor": "#f88808",
+                "images": {
+                  "fallback": {
+                    "src": "/static/93b054e7d6f68e89d528ef62a3fa6b94/1b035/recipe-3.jpg",
+                    "srcSet": "/static/93b054e7d6f68e89d528ef62a3fa6b94/99f43/recipe-3.jpg 250w,\n/static/93b054e7d6f68e89d528ef62a3fa6b94/28380/recipe-3.jpg 500w,\n/static/93b054e7d6f68e89d528ef62a3fa6b94/1b035/recipe-3.jpg 1000w",
+                    "sizes": "(min-width: 1000px) 1000px, 100vw"
+                  },
+                  "sources": [
+                    {
+                      "srcSet": "/static/93b054e7d6f68e89d528ef62a3fa6b94/48571/recipe-3.webp 250w,\n/static/93b054e7d6f68e89d528ef62a3fa6b94/76f01/recipe-3.webp 500w,\n/static/93b054e7d6f68e89d528ef62a3fa6b94/b7ef5/recipe-3.webp 1000w",
+                      "type": "image/webp",
+                      "sizes": "(min-width: 1000px) 1000px, 100vw"
+                    }
+                  ]
+                },
+                "width": 1000,
+                "height": 667
+              }
+            }
+          ]
+        },
+        {
+          "childrenImageSharp": [
+            {
+              "id": "e2dce962-369a-5f02-ad59-538f7cf89241",
+              "gatsbyImageData": {
+                "layout": "constrained",
+                "backgroundColor": "#a8b8c8",
+                "images": {
+                  "fallback": {
+                    "src": "/static/b37a6da43219f9669d4492f279e148fd/26073/recipe-4.jpg",
+                    "srcSet": "/static/b37a6da43219f9669d4492f279e148fd/539b1/recipe-4.jpg 250w,\n/static/b37a6da43219f9669d4492f279e148fd/42561/recipe-4.jpg 500w,\n/static/b37a6da43219f9669d4492f279e148fd/26073/recipe-4.jpg 1000w",
+                    "sizes": "(min-width: 1000px) 1000px, 100vw"
+                  },
+                  "sources": [
+                    {
+                      "srcSet": "/static/b37a6da43219f9669d4492f279e148fd/eae4e/recipe-4.webp 250w,\n/static/b37a6da43219f9669d4492f279e148fd/83762/recipe-4.webp 500w,\n/static/b37a6da43219f9669d4492f279e148fd/6814f/recipe-4.webp 1000w",
+                      "type": "image/webp",
+                      "sizes": "(min-width: 1000px) 1000px, 100vw"
+                    }
+                  ]
+                },
+                "width": 1000,
+                "height": 611
+              }
+            }
+          ]
+        },
+        {
+          "childrenImageSharp": [
+            {
+              "id": "89e1b32a-153a-50ad-9547-3dcd8c123b70",
+              "gatsbyImageData": {
+                "layout": "constrained",
+                "backgroundColor": "#181818",
+                "images": {
+                  "fallback": {
+                    "src": "/static/47e0d640e52c2674ece710c339ce668d/68d0b/recipe-2.jpg",
+                    "srcSet": "/static/47e0d640e52c2674ece710c339ce668d/fc269/recipe-2.jpg 320w,\n/static/47e0d640e52c2674ece710c339ce668d/4d5c4/recipe-2.jpg 640w,\n/static/47e0d640e52c2674ece710c339ce668d/68d0b/recipe-2.jpg 1280w",
+                    "sizes": "(min-width: 1280px) 1280px, 100vw"
+                  },
+                  "sources": [
+                    {
+                      "srcSet": "/static/47e0d640e52c2674ece710c339ce668d/8c64a/recipe-2.webp 320w,\n/static/47e0d640e52c2674ece710c339ce668d/ffef7/recipe-2.webp 640w,\n/static/47e0d640e52c2674ece710c339ce668d/9ba0b/recipe-2.webp 1280w",
+                      "type": "image/webp",
+                      "sizes": "(min-width: 1280px) 1280px, 100vw"
+                    }
+                  ]
+                },
+                "width": 1280,
+                "height": 960
+              }
+            }
+          ]
+        },
+        {
+          "childrenImageSharp": [
+            {
+              "id": "3eeb26c8-3d8b-5940-bf15-c62b5557fcd9",
+              "gatsbyImageData": {
+                "layout": "constrained",
+                "backgroundColor": "#e8e8e8",
+                "images": {
+                  "fallback": {
+                    "src": "/static/bc2294f981e4bab79922da8bac2f66b5/5f5dd/big.jpg",
+                    "srcSet": "/static/bc2294f981e4bab79922da8bac2f66b5/55854/big.jpg 1072w,\n/static/bc2294f981e4bab79922da8bac2f66b5/6b951/big.jpg 2144w,\n/static/bc2294f981e4bab79922da8bac2f66b5/5f5dd/big.jpg 4288w",
+                    "sizes": "(min-width: 4288px) 4288px, 100vw"
+                  },
+                  "sources": [
+                    {
+                      "srcSet": "/static/bc2294f981e4bab79922da8bac2f66b5/00ba5/big.webp 1072w,\n/static/bc2294f981e4bab79922da8bac2f66b5/2dcd2/big.webp 2144w,\n/static/bc2294f981e4bab79922da8bac2f66b5/a887d/big.webp 4288w",
+                      "type": "image/webp",
+                      "sizes": "(min-width: 4288px) 4288px, 100vw"
+                    }
+                  ]
+                },
+                "width": 4288,
+                "height": 2859
+              }
+            }
+          ]
+        },
+        {
+          "childrenImageSharp": [
+            {
+              "id": "97e6085e-c904-59e4-b64a-3156acff80a2",
+              "gatsbyImageData": {
+                "layout": "constrained",
+                "backgroundColor": "#e8e8e8",
+                "images": {
+                  "fallback": {
+                    "src": "/static/38bf127d87a3a0c01300edbe284f1a99/ec080/pexels-photo-262959.jpg",
+                    "srcSet": "/static/38bf127d87a3a0c01300edbe284f1a99/6d49c/pexels-photo-262959.jpg 281w,\n/static/38bf127d87a3a0c01300edbe284f1a99/c8191/pexels-photo-262959.jpg 563w,\n/static/38bf127d87a3a0c01300edbe284f1a99/ec080/pexels-photo-262959.jpg 1125w",
+                    "sizes": "(min-width: 1125px) 1125px, 100vw"
+                  },
+                  "sources": [
+                    {
+                      "srcSet": "/static/38bf127d87a3a0c01300edbe284f1a99/a48cc/pexels-photo-262959.webp 281w,\n/static/38bf127d87a3a0c01300edbe284f1a99/c0079/pexels-photo-262959.webp 563w,\n/static/38bf127d87a3a0c01300edbe284f1a99/4e308/pexels-photo-262959.webp 1125w",
+                      "type": "image/webp",
+                      "sizes": "(min-width: 1125px) 1125px, 100vw"
+                    }
+                  ]
+                },
+                "width": 1125,
+                "height": 750
+              }
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "extensions": {}
+}

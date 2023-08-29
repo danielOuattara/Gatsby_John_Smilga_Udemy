@@ -1,0 +1,98 @@
+
+query MyQuery {
+  allContentfulSimpleRecipesGatsbyJohnSmilga(sort: { title: ASC }) {
+    nodes {
+      id
+      title
+      cookingTime
+      preparationTime
+      content {
+        tags
+      }
+      image {
+        gatsbyImageData(layout: CONSTRAINED, placeholder: BLURRED)
+      }
+    }
+  }
+}
+
+# -------------------------------------------
+
+query MyQuery {
+  allContentfulSimpleRecipesGatsbyJohnSmilga(
+    filter: { featured: { eq: true } }
+    sort: { title: ASC }
+  ) {
+    totalCount
+    nodes {
+      id
+      title
+      cookingTime
+      preparationTime
+      image {
+        gatsbyImageData(layout: CONSTRAINED, placeholder: BLURRED)
+      }
+    }
+  }
+}
+
+# --------------------------------------------
+
+query getSingleRecipe($title: String) {
+  contentfulSimpleRecipesGatsbyJohnSmilga(title: { eq: $title }) {
+    id
+    title
+    servings
+    cookingTime
+    preparationTime
+    description {
+      description
+    }
+    content {
+      ingredients
+      instructions
+      tags
+      tools
+    }
+    image {
+      gatsbyImageData(layout: CONSTRAINED, placeholder: BLURRED)
+    }
+  }
+}
+
+{"title": "Greeks Ribs"}
+
+# --------------------------------------------
+
+query MyQuery {
+  allContentfulSimpleRecipesGatsbyJohnSmilga{
+    totalCount
+    nodes {
+      id
+      content {
+        tags
+      }
+
+    }
+  }
+}
+
+# --------------------------------------------
+
+query MyQuery {
+  allContentfulSimpleRecipesGatsbyJohnSmilga {
+    nodes {
+      title
+    }
+  }
+}
+
+
+# --------------------------------------------
+
+
+# --------------------------------------------
+
+
+# --------------------------------------------
+
