@@ -3,11 +3,16 @@ import Layout from "./../components/Layout";
 import FetchData from "../components/examples/FetchData";
 import { StaticImage } from "gatsby-plugin-image";
 import AllRecipes from "../components/AllRecipes";
+import SEO from "../components/SEO";
 
 export default function Home() {
   return (
     <div>
       <Layout>
+        <SEO
+          title="Home Page"
+          description="This is description for the home page"
+        />
         <main className="page">
           <header className="hero">
             <StaticImage
