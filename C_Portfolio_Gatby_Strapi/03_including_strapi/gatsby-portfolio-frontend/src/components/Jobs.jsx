@@ -6,7 +6,7 @@ import { Link } from "gatsby";
 
 export const query = graphql`
   query {
-    allStrapiJob {
+    allStrapiJob(sort: { createdAt: DESC }) {
       nodes {
         id
         position
@@ -21,27 +21,32 @@ export const query = graphql`
   }
 `;
 export default function Jobs() {
-  const [jobIndex, setJobIndex] = useState(0);
   const data = useStaticQuery(query);
   const jobs = data.allStrapiJob.nodes;
 
+  const [jobIndex, setJobIndex] = useState(0);
   const jobToShow = jobs[jobIndex];
 
   return (
     <section className="section jobs">
       <Title title="experience" />
 
-      <div className=""></div>
       <div className="jobs-center">
-        <div className="btn-container"></div>
-        <article className="job-info">
-          <h3>{jobToShow.position}</h3>
-          <h4>{jobToShow.company}</h4>
+        <div className="btn-container">
           {jobs.map((job, index) => (
-            <button key={job.id} onClick={() => setJobIndex(index)}>
+            <button
+              key={job.id}
+              className={jobIndex === index ? `job-btn active-btn` : `job-btn `}
+              onClick={() => setJobIndex(index)}
+            >
               {job.company}
             </button>
           ))}
+        </div>
+
+        <article className="job-info">
+          <h3>{jobToShow.position}</h3>
+          <h4>{jobToShow.company}</h4>
           <p className="job-date">{jobToShow.date}</p>
           {jobToShow.description.map((item) => (
             <div key={item.id} className="job-desc">
