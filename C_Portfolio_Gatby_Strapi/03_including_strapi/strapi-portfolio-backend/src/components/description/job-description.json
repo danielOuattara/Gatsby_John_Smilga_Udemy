@@ -1,0 +1,12 @@
+{
+  "collectionName": "components_description_job_descriptions",
+  "info": {
+    "displayName": "JobDescription"
+  },
+  "options": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    }
+  }
+}
