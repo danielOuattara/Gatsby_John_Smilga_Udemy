@@ -1,23 +1,20 @@
 import React from "react";
 import { graphql, Link } from "gatsby";
 import { GatsbyImage, getImage } from "gatsby-plugin-image";
-// import Seo from "../components/Seo";
+import Seo from "./../../components/Seo";
 
 //--------------------------------------------------------------
 
 export const query = graphql`
-  query getSingleProject($title: String) {
+  query ($title: String) {
     strapiProject(title: { eq: $title }) {
-      id
       title
-      slug
-      stack {
-        id
-        title
-      }
-      github
-      featured
       description
+      image {
+        localFile {
+          publicURL
+        }
+      }
     }
   }
 `;
@@ -25,8 +22,11 @@ export const query = graphql`
 export default function ProjectTemplate(props) {
   console.log("props = ", props);
   return (
-    <div>
-      <h4>{props.pageContext.title}</h4>
-    </div>
+    <>
+      <main className="project-template-page">
+        <h2>{props.pageContext.title}</h2>
+        <p>{props.data.strapiProject.description}</p>
+      </main>
+    </>
   );
 }

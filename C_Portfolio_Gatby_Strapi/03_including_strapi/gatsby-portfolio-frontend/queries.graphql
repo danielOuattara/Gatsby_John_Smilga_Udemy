@@ -48,10 +48,7 @@ query MyQuery {
   allStrapiProject {
     totalCount
     nodes {
-      id
-      slug
       title
-      featured
       description
       github
       url
@@ -71,7 +68,17 @@ query MyQuery {
 }
 
 # --------------------------------------------
-
+query MyQuery($title: String) {
+  strapiProject(title: {eq: $title}) {
+    title
+    description
+    image {
+      localFile {
+        publicURL
+      }
+    }
+  }
+}
 
 # --------------------------------------------
 
