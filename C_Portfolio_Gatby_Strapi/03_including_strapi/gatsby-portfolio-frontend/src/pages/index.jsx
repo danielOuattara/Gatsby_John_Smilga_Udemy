@@ -24,7 +24,6 @@ export default function IndexPage(props) {
 export const query = graphql`
   query {
     allStrapiProject(filter: { featured: { eq: true } }) {
-      totalCount
       nodes {
         id
         slug
