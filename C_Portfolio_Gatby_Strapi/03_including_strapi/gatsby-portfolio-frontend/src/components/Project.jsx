@@ -4,7 +4,7 @@ import { FaGithubSquare, FaShareSquare } from "react-icons/fa";
 import { Link } from "gatsby";
 
 export default function Project(props) {
-  console.log(props);
+  // console.log(props);
   return (
     <article className="project">
       <GatsbyImage

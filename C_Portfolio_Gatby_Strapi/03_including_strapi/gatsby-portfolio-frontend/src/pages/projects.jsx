@@ -4,7 +4,7 @@ import { Projects, Seo } from "../components";
 
 export default function ProjectsPage(props) {
   const projects = props.data.allStrapiProject.nodes;
-  console.log(props);
+  // console.log(props);
   return (
     <>
       <main>
