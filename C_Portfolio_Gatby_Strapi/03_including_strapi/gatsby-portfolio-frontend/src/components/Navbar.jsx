@@ -4,13 +4,13 @@ import { FaAlignRight } from "react-icons/fa";
 import { links } from "../constants";
 import { Link } from "gatsby";
 
-export default function Navbar() {
+export default function Navbar(props) {
   return (
     <nav className="navbar">
       <div className="nav-center">
         <div className="nav-header">
           <img src={logo} alt="web dev" />
-          <button className="toggle-btn">
+          <button className="toggle-btn" onClick={props.toggleSidebar}>
             <FaAlignRight />
           </button>
         </div>
