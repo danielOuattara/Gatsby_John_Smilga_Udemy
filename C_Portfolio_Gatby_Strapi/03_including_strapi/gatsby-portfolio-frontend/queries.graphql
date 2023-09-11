@@ -82,7 +82,21 @@ query MyQuery($title: String) {
 
 # --------------------------------------------
 
-
+query MyQuery {
+  strapiAbout {
+    title
+    info
+    stack {
+      id
+      title
+    }
+    image {
+      localFile {
+        publicURL
+      }
+    }
+  }
+}
 # --------------------------------------------
 
 
