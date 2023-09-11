@@ -1,7 +1,12 @@
 import React from "react";
-import { Navbar, Sidebar, Footer } from "./Navbar";
+import { Navbar, Sidebar, Footer } from "./../components";
 
 import "../assets/css/main.css";
 export default function Layout(props) {
-  return <>{props.children}</>;
+  return (
+    <>
+      <Navbar />
+      {props.children}
+    </>
+  );
 }
