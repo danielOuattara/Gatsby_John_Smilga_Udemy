@@ -1,0 +1,17 @@
+
+export const query = graphql`
+  query {
+    allStrapiJob(sort: { createdAt: DESC }) {
+      nodes {
+        id
+        position
+        company
+        date
+        description {
+          id
+          name
+        }
+      }
+    }
+  }
+`;
