@@ -23,7 +23,7 @@ export default function Hero() {
                   key={link.id}
                   className="social-link"
                   target="_blank"
-                  rel="non-rel"
+                  rel="noreferrer"
                 >
                   {link.icon}
                 </a>
