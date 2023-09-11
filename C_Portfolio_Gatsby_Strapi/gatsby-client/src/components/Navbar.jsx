@@ -6,7 +6,7 @@ import { Link } from "gatsby";
 
 export default function Navbar() {
   return (
-    <nav>
+    <nav className="navbar">
       <div className="nav-center">
         <div className="nav-header">
           <img src={logo} alt="web dev" />

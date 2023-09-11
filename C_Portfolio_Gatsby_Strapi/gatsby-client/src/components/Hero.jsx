@@ -1,9 +1,43 @@
 import React from "react";
 import { Link } from "gatsby";
-import socialLinks from "../constants/social_links";
+import { social_links } from "../constants";
 // import heroImg from "../assets/images/hero.svg"
 import { StaticImage } from "gatsby-plugin-image";
 
 export default function Hero() {
-  return <h2>hero component</h2>;
+  return (
+    <header className="hero">
+      <section className="section-center hero-center">
+        <article className="hero-info">
+          <div>
+            <div className="underline"></div>
+            <h1>I am Daniel</h1>
+            <h4> Freelance Fullstack Developer: web & mobile</h4>
+            <Link to="/contact" className="btn">
+              Contact me
+            </Link>
+            <div className="social-links">
+              {social_links.map((link) => (
+                <a
+                  href={link.url}
+                  key={link.id}
+                  className="social-link"
+                  target="_blank"
+                  rel="non-rel"
+                >
+                  {link.icon}
+                </a>
+              ))}
+            </div>
+          </div>
+        </article>
+        <StaticImage
+          src="./../assets/images/hero.svg"
+          alt="portfolio"
+          className="hero-img"
+          placeholder="blurred"
+        />
+      </section>
+    </header>
+  );
 }
