@@ -1,5 +1,5 @@
 
-export const query = graphql`
+
   query {
     allStrapiJob(sort: { createdAt: DESC }) {
       nodes {
@@ -14,4 +14,33 @@ export const query = graphql`
       }
     }
   }
-`;
+
+
+#-------------------------------------------------------
+
+
+  query {
+    allStrapiProject {
+      totalCount
+      nodes {
+        id
+        title
+        slug
+        description
+        featured
+        github
+        url
+        stack {
+          id
+          title
+        }
+        image {
+          localFile {
+            childImageSharp {
+              gatsbyImageData(layout: CONSTRAINED, placeholder: BLURRED)
+            }
+          }
+        }
+      }
+    }
+  }

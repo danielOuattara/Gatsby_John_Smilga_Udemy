@@ -30,7 +30,7 @@ module.exports = {
       options: {
         apiURL: process.env.STRAPI_API_URL || "http://localhost:1337",
         accessToken: process.env.STRAPI_TOKEN,
-        collectionTypes: ["job"],
+        collectionTypes: ["job", "project"],
       },
     },
   ],

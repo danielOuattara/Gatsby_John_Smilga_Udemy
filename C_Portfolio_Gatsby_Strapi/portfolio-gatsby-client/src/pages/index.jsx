@@ -2,16 +2,50 @@ import React from "react";
 import { graphql } from "gatsby";
 import { Hero, Jobs, Projects, Seo, Services } from "../components";
 
-const IndexPage = () => {
+const IndexPage = (props) => {
+  const projects = props.data.allStrapiProject.nodes;
   return (
     <>
       <main>
         <Hero />
         <Services />
         <Jobs />
+        <Projects
+          title="featured projects"
+          showLinkToProjects
+          projects={projects}
+        />
       </main>
     </>
   );
 };
 
 export default IndexPage;
+
+export const query = graphql`
+  query {
+    allStrapiProject(filter: { featured: { eq: true } }) {
+      totalCount
+      nodes {
+        id
+        title
+        slug
+        description
+        featured
+        github
+        url
+        stack {
+          id
+          title
+        }
+        image {
+          localFile {
+            childImageSharp {
+              gatsbyImageData(layout: CONSTRAINED, placeholder: BLURRED)
+            }
+          }
+        }
+      }
+    }
+  }
+`;
