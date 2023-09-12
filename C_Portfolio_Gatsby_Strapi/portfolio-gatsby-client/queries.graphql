@@ -1,5 +1,5 @@
 
-
+# query for all jobs
   query {
     allStrapiJob(sort: { createdAt: DESC }) {
       nodes {
@@ -18,29 +18,57 @@
 
 #-------------------------------------------------------
 
-
-  query {
-    allStrapiProject {
-      totalCount
-      nodes {
+# query for all featured projects
+query MyQuery {
+  allStrapiProject(filter: { featured: { eq: true } }) {
+    totalCount
+    nodes {
+      id
+      title
+      slug
+      description
+      featured
+      github
+      url
+      stack {
         id
         title
-        slug
-        description
-        featured
-        github
-        url
-        stack {
-          id
-          title
-        }
-        image {
-          localFile {
-            childImageSharp {
-              gatsbyImageData(layout: CONSTRAINED, placeholder: BLURRED)
-            }
+      }
+      image {
+        localFile {
+          childImageSharp {
+            gatsbyImageData(layout: CONSTRAINED, placeholder: BLURRED)
           }
         }
       }
     }
   }
+}
+#-------------------------------------------------------
+
+# query for all projects
+query MyQuery {
+  allStrapiProject {
+    totalCount
+    nodes {
+      id
+      title
+      slug
+      description
+      featured
+      github
+      url
+      stack {
+        id
+        title
+      }
+      image {
+        localFile {
+          childImageSharp {
+            gatsbyImageData(layout: CONSTRAINED, placeholder: BLURRED)
+          }
+        }
+      }
+    }
+  }
+}
