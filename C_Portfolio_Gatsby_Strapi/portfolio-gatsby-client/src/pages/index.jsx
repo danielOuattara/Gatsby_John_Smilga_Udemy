@@ -2,7 +2,9 @@ import React from "react";
 import { graphql } from "gatsby";
 import { Hero, Jobs, Projects, Seo, Services } from "../components";
 
-const IndexPage = (props) => {
+//-------------------------------------------------------------
+
+export default function IndexPage(props) {
   const projects = props.data.allStrapiProject.nodes;
   return (
     <>
@@ -18,9 +20,9 @@ const IndexPage = (props) => {
       </main>
     </>
   );
-};
+}
 
-export default IndexPage;
+//-------------------------------------------------------------
 
 export const query = graphql`
   query {
