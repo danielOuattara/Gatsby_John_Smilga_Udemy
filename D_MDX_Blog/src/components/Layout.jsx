@@ -12,6 +12,7 @@ export default function Layout({ children }) {
   return (
     <>
       <Navbar />
+      <Sidebar />
       <main>{children}</main>
     </>
   );

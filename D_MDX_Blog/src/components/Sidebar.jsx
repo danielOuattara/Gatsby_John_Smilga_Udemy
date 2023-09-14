@@ -1,10 +1,17 @@
 import React from "react";
 import Links from "../constants/links";
-import Categories from "../components/Categories";
+import { Categories } from "./index";
 import { IoMdClose } from "react-icons/io";
 
-const Sidebar = () => {
-  return <h4>sidebar component</h4>;
-};
-
-export default Sidebar;
+export default function Sidebar() {
+  return (
+    <aside className={`sidedar showSidebar`}>
+      <button className="close-btn">
+        <IoMdClose />
+      </button>
+      <div className="sidebar-container">
+        <Links styleClass="sidebar-links" />
+      </div>
+    </aside>
+  );
+}
