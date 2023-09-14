@@ -7,7 +7,7 @@ import { Hero, Jobs, Projects, Seo, Services } from "../components";
 export default function IndexPage(props) {
   const projects = props.data.allStrapiProject.nodes;
   return (
-    <>
+    <Seo>
       <main>
         <Hero />
         <Services />
@@ -18,9 +18,11 @@ export default function IndexPage(props) {
           projects={projects}
         />
       </main>
-    </>
+    </Seo>
   );
 }
+
+export const Head = () => <Seo title={"Home"} />;
 
 //-------------------------------------------------------------
 

@@ -18,15 +18,15 @@ module.exports = {
     description:
       "Portfolio website where I present myself and show my skills on different kind of projects and using a wide range of effective web design technologies. From the contact page, everybody can contact me",
     titleTemplate: `%s | Fullstack Portfolio `,
-    url: "https://daniel-gatsby-strapi-portfolio.netlify.app",
-    linkedinUsername: "daniel-b-ouattara-677146ab",
+    siteUrl: "https://daniel-gatsby-strapi-portfolio.netlify.app",
     image: "/mainImg.png",
+    linkedInUsername: "daniel-b-ouattara-677146ab",
+    twitterUsername: "@danielOuattara",
   },
   plugins: [
     `gatsby-plugin-image`,
     `gatsby-plugin-sharp`,
     `gatsby-transformer-sharp`,
-    `gatsby-plugin-react-helmet`,
     {
       resolve: `gatsby-source-filesystem`,
       options: {
