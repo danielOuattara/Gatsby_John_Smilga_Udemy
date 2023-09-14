@@ -4,7 +4,7 @@ import { FaBars } from "react-icons/fa";
 import logo from "../assets/logo.svg";
 import { Links, SocialLinks } from "../constants";
 
-export default function Navbar() {
+export default function Navbar(props) {
   return (
     <nav className="navbar">
       <div className="nav-center">
@@ -12,7 +12,7 @@ export default function Navbar() {
           <Link to="/" className="nav-logo">
             <img src={logo} alt="mdx logo" />
           </Link>
-          <button className="toggle-btn">
+          <button className="toggle-btn" onClick={props.toggleSidebar}>
             <FaBars />
           </button>
         </div>
