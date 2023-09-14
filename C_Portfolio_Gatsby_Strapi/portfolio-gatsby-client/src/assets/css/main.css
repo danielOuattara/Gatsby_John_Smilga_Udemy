@@ -958,7 +958,11 @@ Project Template Page
 ===============
 */
 .project-template-page {
-  padding-top: 3rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 5rem;
+  gap: 3rem;
   text-align: center;
 }
 
@@ -970,6 +974,16 @@ Project Template Page
   max-width: 35em;
   margin: 0 auto;
   margin-top: 2rem;
+}
+
+.project-template-page a {
+  display: block;
+  margin: 0 auto;
+}
+
+.project-template-page img {
+  display: block;
+  max-width: 36em;
 }
 
 /*

@@ -12,7 +12,6 @@ export const query = graphql`
         defaultDescription: description
         defaultImage: image
         siteUrl
-        titleTemplate
         linkedInUsername
         twitterUsername
       }
@@ -21,6 +20,7 @@ export const query = graphql`
 `;
 
 export default function Seo({ title, description, image, children }) {
+  // console.log("image =  ", image);
   const data = useStaticQuery(query);
 
   const { pathname } = useLocation();
@@ -31,7 +31,6 @@ export default function Seo({ title, description, image, children }) {
     defaultDescription,
     defaultImage,
     siteUrl,
-    titleTemplate,
     linkedInUsername,
     twitterUsername,
   } = data.site.siteMetadata;
@@ -44,6 +43,8 @@ export default function Seo({ title, description, image, children }) {
     linkedInUsername,
     twitterUsername,
   };
+
+  console.log("seo =  ", seo);
 
   return (
     <>

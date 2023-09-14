@@ -1,8 +1,11 @@
 import React from "react";
+import { Seo } from "../components";
+
+//-----------------------------------------------------------------------
 
 export default function Contact() {
   return (
-    <>
+    <Seo>
       <section className="contact-page">
         <article className="contact-form">
           <h3>stay in touch ?</h3>
@@ -36,6 +39,10 @@ export default function Contact() {
           </form>
         </article>
       </section>
-    </>
+    </Seo>
   );
 }
+
+//-----------------------------------------------------------------------
+
+export const Head = () => <Seo title={"Contacts"} />;
