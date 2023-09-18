@@ -20,6 +20,7 @@ export default function Layout({ children }) {
       <Navbar toggleSidebar={toggleSidebar} />
       <Sidebar toggleSidebar={toggleSidebar} isSidebarOpen={isSidebarOpen} />
       <main>{children}</main>
+      <Footer />
     </>
   );
 }
