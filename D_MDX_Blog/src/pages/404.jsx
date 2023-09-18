@@ -3,5 +3,17 @@ import { Link } from "gatsby";
 import Layout from "../components/Layout";
 
 export default function NotFoundPage() {
-  <h2>error page</h2>;
+  return (
+    <Layout>
+      <section className="error-page">
+        <div className="page-center">
+          <span>404</span>
+          <h4>Page cannot be found</h4>
+          <Link to="/" className="btn">
+            Back to home
+          </Link>
+        </div>
+      </section>
+    </Layout>
+  );
 }
