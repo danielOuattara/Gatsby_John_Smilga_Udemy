@@ -1,10 +1,17 @@
-import React from 'react'
-import { StaticImage } from 'gatsby-plugin-image'
+import React from "react";
+import { StaticImage } from "gatsby-plugin-image";
 
-const Hero = () => {
+export default function Hero(props) {
   return (
-    <h4>hero component</h4>
-  )
+    <header className="hero">
+      {props.showPerson && (
+        <StaticImage
+          src="./../assets/person.png"
+          placeholder="blurred"
+          className="hero-person"
+          alt="person typing in keyboard"
+        />
+      )}
+    </header>
+  );
 }
-
-export default Hero

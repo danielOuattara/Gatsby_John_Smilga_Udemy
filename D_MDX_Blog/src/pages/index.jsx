@@ -3,5 +3,9 @@ import { Hero, Layout, Posts } from "../components";
 import { graphql } from "gatsby";
 
 export default function IndexPage() {
-  return <Layout></Layout>;
+  return (
+    <Layout>
+      <Hero showPerson />
+    </Layout>
+  );
 }
