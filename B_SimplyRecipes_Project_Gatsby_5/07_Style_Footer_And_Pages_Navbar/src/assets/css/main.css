@@ -434,6 +434,8 @@ form>*:last-child {
     padding: 0.15rem 1rem;
 }
 
+
+
 @media screen and (min-width: 992px) {
     .navbar {
         height: 6rem;
@@ -474,6 +476,8 @@ form>*:last-child {
         align-items: center;
         margin-right: 0;
     }
+
+
 }
 
 /*#########*/
