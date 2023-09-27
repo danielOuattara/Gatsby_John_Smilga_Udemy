@@ -8,7 +8,7 @@ export default function Images_Example_2() {
       <>
         {/* <h4> fixed </h4> */}
         <StaticImage
-          src="./../../assets/images/recipe-1.jpeg"
+          src="./../../assets/images/recipes/recipe-1.jpeg"
           alt="recipe 1"
           placeholder="blurred"
           layout="fixed"
@@ -21,7 +21,7 @@ export default function Images_Example_2() {
       <>
         {/* <h4> constrained / default</h4> */}
         <StaticImage
-          src="./../../assets/images/recipe-1.jpeg"
+          src="./../../assets/images/recipes/recipe-1.jpeg"
           alt="recipe 1"
           // height={400} // toggle
           placeholder="tracedSVG"
@@ -34,7 +34,7 @@ export default function Images_Example_2() {
       <>
         {/* <h4> full width </h4> */}
         <StaticImage
-          src="./../../assets/images/recipe-1.jpeg"
+          src="./../../assets/images/recipes/recipe-1.jpeg"
           alt="recipe 1"
           placeholder="dominantColor"
           layout="fullWidth"

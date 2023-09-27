@@ -1,8 +1,8 @@
 // import * as React from "react";
 // import { useStaticQuery, graphql } from "gatsby";
 
-/* Testing useStaticQuery() 
------------------------------*/
+// /* Testing useStaticQuery()
+// -----------------------------*/
 
 // export default function FetchData() {
 //   const data = useStaticQuery(graphql`
@@ -47,12 +47,61 @@
 //   );
 // }
 
-//--------------------------------------------------------------
+//--------------------------------------- useStaticQueries from scratch
+
+// import React from "react";
+// import { useStaticQuery, graphql } from "gatsby";
+
+// /* Testing useStaticQuery()
+// -----------------------------*/
+
+// const graphqlQuery = graphql`
+//   query SiteData {
+//     site {
+//       # using 'info' as alias for siteMetadata
+//       siteMetadata {
+//         title
+//         description
+//         inspiredBy
+//         author {
+//           name
+//           place
+//         }
+//         simpleData
+//         complexData {
+//           id
+//           email
+//           first_name
+//           gender
+//           last_name
+//           ip_address
+//         }
+//       }
+//     }
+//   }
+// `;
+
+// export default function FetchData() {
+//   // site is the alias declared above
+//   const {
+//     site: {
+//       siteMetadata: { title },
+//     },
+//   } = useStaticQuery(graphqlQuery);
+
+//   return (
+//     <>
+//       <h2>Title: {title}</h2>
+//     </>
+//   );
+// }
+
+//----------------------------------------------- alias
 
 import React from "react";
 import { useStaticQuery, graphql } from "gatsby";
 
-/* Testing useStaticQuery() 
+/* Testing useStaticQuery()
 -----------------------------*/
 
 const graphqlQuery = graphql`
