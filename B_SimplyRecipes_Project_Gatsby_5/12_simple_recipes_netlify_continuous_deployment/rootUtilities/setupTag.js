@@ -1,4 +1,4 @@
-export default function setupTags(recipes) {
+function setupTags(recipes) {
   const tagsObject = {};
   recipes.forEach((recipe) => {
     return recipe.content.tags.forEach((singleTag) => {
@@ -19,3 +19,5 @@ export default function setupTags(recipes) {
 
   return newTags;
 }
+
+module.exports = setupTags;

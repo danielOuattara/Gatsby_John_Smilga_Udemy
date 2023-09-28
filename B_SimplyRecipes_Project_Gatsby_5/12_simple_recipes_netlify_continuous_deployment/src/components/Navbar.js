@@ -3,7 +3,7 @@ import { Link } from "gatsby";
 import { FiAlignJustify } from "react-icons/fi";
 import logo from "./../assets/images/logo.svg";
 
-const navBarItems = ["home", "recipes", "tags", "about", "contact"];
+const navBarItems = ["home", "recipes", "tags", "about"];
 
 const Navbar = () => {
   const [showLinks, setShowLinks] = useState(false);
