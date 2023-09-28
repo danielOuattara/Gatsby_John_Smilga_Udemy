@@ -14,7 +14,6 @@ export const query = graphql`
 `;
 export default function Seo(props) {
   const data = useStaticQuery(query);
-  console.log(data);
   return (
     <Helmet
       title={`${props.title} | ${data.site.siteMetadata.title}`}

@@ -7,9 +7,12 @@ export default function RecipesList({ recipes = [] }) {
   return (
     <div className="recipes-list">
       {recipes.map((item) => {
-        const slug = titleToSlug(item.title);
         return (
-          <Link to={`/${slug}`} key={item.id} className="recipe">
+          <Link
+            to={`/${titleToSlug(item.title)}`}
+            key={item.id}
+            className="recipe"
+          >
             <GatsbyImage
               image={getImage(item.image.gatsbyImageData)}
               className="recipe-img"

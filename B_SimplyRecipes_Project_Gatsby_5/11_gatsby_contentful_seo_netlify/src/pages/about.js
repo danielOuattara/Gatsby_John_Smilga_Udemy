@@ -61,7 +61,7 @@ export default function About(props) {
           />
         </section>
         <section className="featured-recipes">
-          <h5>Look at this Awesomesouce!</h5>
+          <h5>Look at this Awesome sauce!</h5>
           <RecipesList recipes={featuredRecipes} />
         </section>
       </main>

@@ -8,7 +8,6 @@ export default function Recipes() {
     <Layout>
       <Seo title="Recipes Page" />
       <main className="page">
-        <h1>Recipes page</h1>
         <AllRecipes />
       </main>
     </Layout>
