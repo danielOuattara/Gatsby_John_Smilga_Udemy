@@ -7,7 +7,7 @@ export default function Footer() {
       <div>
         <SocialLinks styleClass={"footer-icons"} />
         <p>
-          &copy; 2019 - {new Date().getFullYear()} MDX Blog. All Rights Reserved
+          &copy; 2019 - {new Date().getFullYear()} mdx blog. all rights reserved
         </p>
       </div>
     </footer>

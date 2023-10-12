@@ -14,7 +14,7 @@ export default function Navbar(props) {
           </Link>
           <button
             className="toggle-btn"
-            onClick={() => props.setSidebarOpen(!props.isSidebarOpen)}
+            onClick={() => props.setIsSidebarOpen(!props.isSidebarOpen)}
           >
             <FaBars />
           </button>
