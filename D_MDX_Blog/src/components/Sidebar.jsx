@@ -6,7 +6,11 @@ import { IoMdClose } from "react-icons/io";
 export default function Sidebar(props) {
   return (
     <aside className={props.isSidebarOpen ? "sidebar showSidebar" : "sidebar"}>
-      <button className="close-btn" type="button" onClick={props.toggleSidebar}>
+      <button
+        className="close-btn"
+        type="button"
+        onClick={() => props.setIsSidebarOpen(!props.isSidebarOpen)}
+      >
         <IoMdClose />
       </button>
       <div className="sidebar-container">

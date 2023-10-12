@@ -12,7 +12,10 @@ export default function Navbar(props) {
           <Link to="/" className="nav-logo">
             <img src={logo} alt="mdx logo" />
           </Link>
-          <button className="toggle-btn" onClick={props.toggleSidebar}>
+          <button
+            className="toggle-btn"
+            onClick={() => props.setSidebarOpen(!props.isSidebarOpen)}
+          >
             <FaBars />
           </button>
         </div>

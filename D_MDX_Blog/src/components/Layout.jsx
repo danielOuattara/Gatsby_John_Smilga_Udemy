@@ -10,15 +10,20 @@ import { Footer, Navbar, Sidebar } from "./index";
 
 export default function Layout({ children }) {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
-
-  const toggleSidebar = () => {
-    setIsSidebarOpen(!isSidebarOpen);
-  };
-
+  
+  //  const toggleSidebar = () => {
+  //    setIsSidebarOpen(!isSidebarOpen);
+  //  };
   return (
     <>
-      <Navbar toggleSidebar={toggleSidebar} />
-      <Sidebar toggleSidebar={toggleSidebar} isSidebarOpen={isSidebarOpen} />
+      <Navbar
+        setIsSidebarOpen={setIsSidebarOpen}
+        isSidebarOpen={isSidebarOpen}
+      />
+      <Sidebar
+        setIsSidebarOpen={setIsSidebarOpen}
+        isSidebarOpen={isSidebarOpen}
+      />
       <main>{children}</main>
       <Footer />
     </>
