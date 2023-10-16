@@ -625,6 +625,11 @@ Testing Post and Components
 ===============
 */
 
+.special {
+  color: green;
+  text-align: center;
+}
+
 .code {
   background: #1e1e1e;
   color: var(--clr-primary-5);
