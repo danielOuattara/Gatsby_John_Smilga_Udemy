@@ -1,16 +1,34 @@
-import React from 'react'
-import Layout from '../components/Layout'
-import Hero from '../components/Hero'
-import styled from 'styled-components'
-import { GatsbyImage, getImage } from 'gatsby-plugin-image'
-import Banner from '../components/Banner'
-import { graphql } from 'gatsby'
-import { MDXRenderer } from 'gatsby-plugin-mdx'
-const PostTemplate = () => {
-  return <h2>post template</h2>
+import React from "react";
+import { Layout, Hero, Banner } from "../components";
+import styled from "styled-components";
+import { GatsbyImage, getImage } from "gatsby-plugin-image";
+import { graphql } from "gatsby";
+import { MDXRenderer } from "gatsby-plugin-mdx";
+
+export default function PostTemplate(props) {
+  console.log(props);
+  return <h2>post template</h2>;
 }
 
-
+export const query = graphql`
+  query ($slug: String) {
+    mdx(frontmatter: { slug: { eq: $slug } }) {
+      frontmatter {
+        category
+        date(formatString: "MMMM, Do YYYY")
+        slug
+        title
+        readTime
+        image {
+          childImageSharp {
+            gatsbyImageData
+          }
+        }
+      }
+      body
+    }
+  }
+`;
 
 const Wrapper = styled.section`
   width: 85vw;
@@ -61,6 +79,4 @@ const Wrapper = styled.section`
       column-gap: 4rem;
     }
   }
-`
-
-export default PostTemplate
+`;
