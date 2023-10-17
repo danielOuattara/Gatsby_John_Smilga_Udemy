@@ -10,7 +10,7 @@ export default function PostTemplate(props) {
   // console.log(props);
 
   const { frontmatter, body } = props.data.mdx;
-  console.log("body = ", body);
+  // console.log("body = ", body);
 
   return (
     <Layout>

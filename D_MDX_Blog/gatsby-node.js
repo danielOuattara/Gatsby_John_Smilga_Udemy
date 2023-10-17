@@ -29,7 +29,7 @@ exports.createPages = async ({ graphql, actions }) => {
 
   result.data.allCategories.distinct.forEach((category) => {
     actions.createPage({
-      path: `/category/${category.toLowerCase()}`,
+      path: `/categories/${category.toLowerCase()}`,
       component: path.resolve(`src/templates/category-template.jsx`),
       context: {
         category,

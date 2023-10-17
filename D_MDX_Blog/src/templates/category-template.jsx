@@ -1,17 +1,34 @@
-import React from 'react'
-import Layout from '../components/Layout'
-import Hero from '../components/Hero'
-import Posts from '../components/Posts'
-import { graphql } from 'gatsby'
+import React from "react";
+import { Layout, Hero, Posts } from "../components";
+import { graphql } from "gatsby";
 
-const CategoryTemplate = ()=> {
-  
-  return (
-   <h2>category template</h2>
-  )
+export default function CategoryTemplate(props) {
+  console.log(props);
+  return <h2>category template</h2>;
 }
 
-
-
-
-export default CategoryTemplate
+export const query = graphql`
+  query QuerysingleCategory($category: String) {
+    allMdx(filter: { frontmatter: { category: { eq: $category } } }) {
+      edges {
+        node {
+          id
+          frontmatter {
+            title
+            author
+            category
+            readTime
+            date(formatString: "MMMM, Do YYYY")
+            image {
+              childImageSharp {
+                gatsbyImageData
+              }
+              publicURL
+            }
+          }
+          excerpt
+        }
+      }
+    }
+  }
+`;
