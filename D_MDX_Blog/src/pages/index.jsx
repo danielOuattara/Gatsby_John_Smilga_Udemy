@@ -1,12 +1,13 @@
 import React from "react";
-import { Hero, Layout, Posts } from "../components";
+import { Hero, Layout, Posts } from "./../components";
 import { graphql } from "gatsby";
 
 export default function IndexPage(props) {
-  console.log(props);
+  // console.log(props);
   return (
     <Layout>
       <Hero showPerson />
+      <Posts title={"recently published"} posts={props.data.allMdx.nodes} />
     </Layout>
   );
 }
