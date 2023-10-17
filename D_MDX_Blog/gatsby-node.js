@@ -4,22 +4,35 @@ const path = require("path");
 exports.createPages = async ({ graphql, actions }) => {
   const result = await graphql(`
     {
-      allMdx {
+      allPosts: allMdx {
         nodes {
           frontmatter {
             slug
           }
         }
       }
+      allCategories: allMdx {
+        distinct(field: { frontmatter: { category: SELECT } })
+      }
     }
   `);
 
-  result.data.allMdx.nodes.forEach((node) => {
+  result.data.allPosts.nodes.forEach((node) => {
     actions.createPage({
       path: `/posts/${node.frontmatter.slug}`,
       component: path.resolve(`src/templates/post-template.jsx`),
       context: {
         slug: node.frontmatter.slug,
+      },
+    });
+  });
+
+  result.data.allCategories.distinct.forEach((category) => {
+    actions.createPage({
+      path: `/category/${category.toLowerCase()}`,
+      component: path.resolve(`src/templates/category-template.jsx`),
+      context: {
+        category,
       },
     });
   });
