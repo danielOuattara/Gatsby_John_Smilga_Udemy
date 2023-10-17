@@ -22,6 +22,7 @@ export const query = graphql`
           author
           category
           readTime
+          slug
           date(formatString: "MMMM, Do YYYY")
           image {
             childImageSharp {

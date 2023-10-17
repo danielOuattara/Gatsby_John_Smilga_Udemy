@@ -3,7 +3,7 @@ import Post from "./Post";
 import Banner from "../Banner";
 
 export default function Posts(props) {
-  console.log(props);
+  // console.log(props);
   return (
     <section className="posts">
       <h3 className="posts-title">{props.title}</h3>
@@ -11,12 +11,14 @@ export default function Posts(props) {
         {/* --- posts column --- */}
         <article>
           {props.posts.map((post) => (
-            <Post key={post.id} {...post}></Post>
+            <Post key={post.id} {...post} />
           ))}
         </article>
 
         {/* --- banner column --- */}
-        <article>banner</article>
+        <article>
+          <Banner />
+        </article>
       </div>
     </section>
   );

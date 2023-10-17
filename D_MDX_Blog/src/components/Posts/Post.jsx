@@ -1,13 +1,42 @@
 import React from "react";
 import { GatsbyImage, getImage } from "gatsby-plugin-image";
-import { FaRegClock } from "react-icons/fa";
+import { FaRegClock, FaRegCalendarAlt } from "react-icons/fa";
 import { IoMdArrowRoundForward } from "react-icons/io";
 import { Link } from "gatsby";
 import styled from "styled-components";
 
-const Post = () => {
-  return <h4>single post</h4>;
-};
+export default function Post(props) {
+  console.log(props);
+  return (
+    <Wrapper>
+      <GatsbyImage
+        image={getImage(props.frontmatter.image)}
+        alt={props.frontmatter.title}
+        className="img"
+      />
+      <div className="info">
+        <span className="category">{props.frontmatter.category}</span>
+        <h3>{props.frontmatter.title}</h3>
+        <div className="underline"></div>
+        <p>{props.excerpt}</p>
+        <Link to={`/posts/${props.frontmatter.slug}`} className="link">
+          Continue Reading <IoMdArrowRoundForward />
+        </Link>
+        <footer>
+          <span className="date">
+            {" "}
+            <FaRegCalendarAlt className="icon" />
+            {props.frontmatter.date}
+          </span>
+          <span className="date">
+            <FaRegClock className="icon" />
+            {props.frontmatter.readTime} minutes reading
+          </span>
+        </footer>
+      </div>
+    </Wrapper>
+  );
+}
 
 const Wrapper = styled.article`
   margin-bottom: 3rem;
@@ -110,5 +139,3 @@ const Wrapper = styled.article`
     }
   }
 `;
-
-export default Post;

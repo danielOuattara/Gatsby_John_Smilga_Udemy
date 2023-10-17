@@ -1,13 +1,11 @@
-import React from 'react'
-import styled from 'styled-components'
-import About from './About'
-import Recent from './Recent'
-import BannerCategories from './BannerCategories'
+import React from "react";
+import styled from "styled-components";
+import About from "./About";
+import Recent from "./Recent";
+import BannerCategories from "./BannerCategories";
 const Banner = () => {
-  return (
-    <Wrapper>Banner</Wrapper>
-  )
-}
+  return <Wrapper>Banner</Wrapper>;
+};
 
 const Wrapper = styled.aside`
   display: grid;
@@ -20,6 +18,6 @@ const Wrapper = styled.aside`
       column-gap: 3rem;
     }
   }
-`
+`;
 
-export default Banner
+export default Banner;
