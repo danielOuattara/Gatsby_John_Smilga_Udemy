@@ -3,7 +3,7 @@ import { Layout, Hero, Posts } from "../components";
 import { graphql } from "gatsby";
 
 export default function PostsPage(props) {
-  console.log(props);
+  // console.log(props);
   return (
     <Layout>
       <Hero />
