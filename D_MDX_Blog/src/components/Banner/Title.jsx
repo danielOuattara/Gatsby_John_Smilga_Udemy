@@ -1,8 +1,15 @@
 import React from "react";
 import styled from "styled-components";
-const Title = () => {
-  return <Wrapper>Banner Title</Wrapper>;
-};
+
+export default function Title(props) {
+  return (
+    <Wrapper>
+      <h4>{props.title}</h4>
+      <div className="line"></div>
+    </Wrapper>
+  );
+}
+
 const Wrapper = styled.div`
   position: relative;
   text-align: center;
@@ -27,4 +34,3 @@ const Wrapper = styled.div`
     z-index: -1;
   }
 `;
-export default Title;
