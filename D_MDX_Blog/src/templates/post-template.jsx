@@ -4,10 +4,39 @@ import styled from "styled-components";
 import { GatsbyImage, getImage } from "gatsby-plugin-image";
 import { graphql } from "gatsby";
 import { MDXRenderer } from "gatsby-plugin-mdx";
+import { MDXProvider } from "@mdx-js/react";
 
 export default function PostTemplate(props) {
-  console.log(props);
-  return <h2>post template</h2>;
+  // console.log(props);
+
+  const { frontmatter, body } = props.data.mdx;
+  console.log("body = ", body);
+
+  return (
+    <Layout>
+      <Hero />
+      <Wrapper>
+        {/* ------- post  info-------- */}
+        <article>
+          <GatsbyImage
+            image={getImage(frontmatter.image)}
+            alt={frontmatter.title}
+            className="main-img"
+          />
+          <div className="post-info">
+            <span>{frontmatter.category}</span>
+            <h2>{frontmatter.title}</h2>
+            <p>{frontmatter.date}</p>
+            <div className="underline"></div>
+          </div>
+
+          {/* <MDXRenderer>{body}</MDXRenderer> */}
+          <MDXProvider>{body}</MDXProvider>
+        </article>
+        {/* ------- banner -------- */}
+      </Wrapper>
+    </Layout>
+  );
 }
 
 export const query = graphql`
