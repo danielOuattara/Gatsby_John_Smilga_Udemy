@@ -1,9 +1,37 @@
 import React from "react";
-import Layout from "../components/Layout";
-import Hero from "../components/Hero";
+import { Layout, Hero, Posts } from "../components";
 import { graphql } from "gatsby";
-import Posts from "../components/Posts";
 
-export default function PostsPage() {
-  return <h4>posts page</h4>;
+export default function PostsPage(props) {
+  console.log(props);
+  return (
+    <Layout>
+      <Hero />
+      <Posts title={"recently published"} posts={props.data.allMdx.nodes} />
+    </Layout>
+  );
 }
+
+export const query = graphql`
+  query {
+    allMdx(sort: { frontmatter: { date: DESC } }) {
+      nodes {
+        id
+        frontmatter {
+          title
+          author
+          category
+          readTime
+          slug
+          date(formatString: "MMMM, Do YYYY")
+          image {
+            childImageSharp {
+              gatsbyImageData
+            }
+          }
+        }
+        excerpt
+      }
+    }
+  }
+`;
