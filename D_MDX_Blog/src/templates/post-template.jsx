@@ -9,7 +9,7 @@ import { Link } from "gatsby";
 // const shortcodes = { Link }; // Provide common components here
 
 export default function PostTemplate(props) {
-  // console.log("SUPER props = ", props);
+  console.log("SUPER props = ", props);
 
   const { frontmatter } = props.data.mdx;
 
