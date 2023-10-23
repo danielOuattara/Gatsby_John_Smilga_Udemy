@@ -16,7 +16,7 @@ export default function Post(props) {
       <div className="info">
         <span className="category">{props.frontmatter.category}</span>
         <h3>{props.frontmatter.title}</h3>
-        <div className="underline"></div>
+
         <p>{props.excerpt}</p>
         <Link to={`/posts/${props.frontmatter.slug}`} className="link">
           Continue Reading <IoMdArrowRoundForward />

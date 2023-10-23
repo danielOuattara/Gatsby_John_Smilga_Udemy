@@ -13,7 +13,7 @@ export default function Title(props) {
 const Wrapper = styled.div`
   position: relative;
   text-align: center;
-  margin-bottom: 1.25rem;
+  margin-bottom: 0.5rem;
   h4 {
     color: var(--clr-grey-3);
     text-transform: uppercase;

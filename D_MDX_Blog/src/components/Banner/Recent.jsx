@@ -32,7 +32,11 @@ export default function Recent() {
     <Wrapper>
       <Title title={"recent posts"} />
       {data.allMdx.nodes.map((post) => (
-        <Link to={`/posts/${post.frontmatter.slug}`} className="post">
+        <Link
+          to={`/posts/${post.frontmatter.slug}`}
+          className="post"
+          key={post.id}
+        >
           <GatsbyImage
             image={getImage(post.frontmatter.image)}
             alt={post.frontmatter.title}
@@ -53,7 +57,8 @@ const Wrapper = styled.div`
     display: grid;
     grid-template-columns: 75px 1fr;
     column-gap: 1rem;
-    margin-bottom: 1rem;
+    margin-bottom: 0.5rem;
+    padding: 10px;
   }
   .img {
     border-radius: var(--radius);
@@ -71,6 +76,10 @@ const Wrapper = styled.div`
     color: var(--clr-grey-5);
   }
   .post:hover {
+    border: 1px solid grey;
+    border-radius: 5px;
+    margin-bottom: 0.45rem;
+    padding: 9px;
     h5 {
       color: var(--clr-primary-5);
     }

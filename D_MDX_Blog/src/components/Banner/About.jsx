@@ -1,7 +1,7 @@
 import React from "react";
 import SocialLinks from "../../constants/socialLinks";
 import { StaticImage } from "gatsby-plugin-image";
-import Title from "./Title";
+import { Title } from "./../../components";
 import styled from "styled-components";
 
 export default function About() {

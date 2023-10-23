@@ -1,9 +1,8 @@
 import React from "react";
-import Post from "./Post";
-import Banner from "../Banner";
+import { Post, Banner } from "./../../components";
 
 export default function Posts(props) {
-  // console.log(props);
+  console.log(props);
   return (
     <section className="posts">
       <h3 className="posts-title">{props.title}</h3>
