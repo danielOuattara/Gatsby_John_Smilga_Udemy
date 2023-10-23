@@ -9,9 +9,11 @@ import { Link } from "gatsby";
 // const shortcodes = { Link }; // Provide common components here
 
 export default function PostTemplate(props) {
-  console.log("SUPER props = ", props);
+  // console.log("SUPER props = ", props);
 
   const { frontmatter } = props.data.mdx;
+
+  console.log("frontmatter = ", frontmatter);
 
   return (
     <Layout>
@@ -31,7 +33,24 @@ export default function PostTemplate(props) {
             <div className="underline"></div>
           </div>
 
-          <MDXProvider>{props.children}</MDXProvider>
+          <MDXProvider components={frontmatter.embeddedImages}>
+            <GatsbyImage
+              image={getImage(frontmatter.embeddedImages[0])}
+              alt="backroad"
+              className="first-inline-img"
+            />
+            <GatsbyImage
+              image={getImage(frontmatter.embeddedImages[1])}
+              alt="backroad"
+              className="first-inline-img"
+            />
+            <GatsbyImage
+              image={getImage(frontmatter.embeddedImages[2])}
+              alt="backroad"
+              className="first-inline-img"
+            />
+            {props.children}
+          </MDXProvider>
         </article>
         {/* ------- banner -------- */}
       </Wrapper>
@@ -49,6 +68,11 @@ export const query = graphql`
         title
         readTime
         image {
+          childImageSharp {
+            gatsbyImageData
+          }
+        }
+        embeddedImages {
           childImageSharp {
             gatsbyImageData
           }
