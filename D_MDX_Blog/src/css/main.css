@@ -374,6 +374,10 @@ Sidebar
   cursor: pointer;
 }
 
+.category a {
+  color: var(--clr-grey-5);
+}
+
 @media screen and (min-width: 800px) {
   .sidebar {
     transform: translateX(-100%);
