@@ -3,14 +3,15 @@ import { Layout, Hero, Banner } from "../components";
 import styled from "styled-components";
 import { GatsbyImage, getImage } from "gatsby-plugin-image";
 import { graphql } from "gatsby";
-// import { MDXRenderer } from "gatsby-plugin-mdx";
-// import { MDXProvider } from "@mdx-js/react";
+import { MDXProvider } from "@mdx-js/react";
+import { Link } from "gatsby";
+
+// const shortcodes = { Link }; // Provide common components here
 
 export default function PostTemplate(props) {
-  console.log(props);
+  // console.log("SUPER props = ", props);
 
   const { frontmatter } = props.data.mdx;
-  // console.log("body = ", body);
 
   return (
     <Layout>
@@ -29,10 +30,8 @@ export default function PostTemplate(props) {
             <p>{frontmatter.date}</p>
             <div className="underline"></div>
           </div>
-          {props.children}
 
-          {/* <MDXRenderer>{body}</MDXRenderer> */}
-          {/* <MDXProvider>{body}</MDXProvider> */}
+          <MDXProvider>{props.children}</MDXProvider>
         </article>
         {/* ------- banner -------- */}
       </Wrapper>
@@ -55,7 +54,6 @@ export const query = graphql`
           }
         }
       }
-      # body
     }
   }
 `;

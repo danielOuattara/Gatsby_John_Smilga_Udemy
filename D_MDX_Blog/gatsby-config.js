@@ -13,7 +13,12 @@ module.exports = {
     `gatsby-plugin-sharp`,
     `gatsby-transformer-sharp`,
     `gatsby-plugin-styled-components`,
-    `gatsby-plugin-mdx`,
+    {
+      resolve: `gatsby-plugin-mdx`,
+      options: {
+        extensions: [`.mdx`, `.md`],
+      },
+    },
     {
       resolve: `gatsby-source-filesystem`,
       options: {
@@ -35,6 +40,14 @@ module.exports = {
         path: `${__dirname}/src/posts`,
       },
     },
+    // {
+    //   resolve: `gatsby-plugin-page-creator`,
+    //   options: {
+    //     name: `posts`,
+    //     path: `${__dirname}/src/posts`,
+    //   },
+    // },
+
     // {
     //   resolve: `gatsby-plugin-mdx`,
     //   options: {

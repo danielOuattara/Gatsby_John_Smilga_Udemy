@@ -1,4 +1,5 @@
 const path = require("path");
+const postTemplate = path.resolve(`./src/templates/post-template.jsx`);
 
 // create pages dynamically
 exports.createPages = async ({ graphql, actions }) => {
@@ -8,6 +9,9 @@ exports.createPages = async ({ graphql, actions }) => {
         nodes {
           frontmatter {
             slug
+          }
+          internal {
+            contentFilePath
           }
         }
       }
@@ -20,7 +24,9 @@ exports.createPages = async ({ graphql, actions }) => {
   result.data.allPosts.nodes.forEach((node) => {
     actions.createPage({
       path: `/posts/${node.frontmatter.slug}`,
-      component: path.resolve(`src/templates/post-template.jsx`),
+      // component: path.resolve(`src/templates/post-template.jsx`),
+      // component: node.internal.contentFilePath,
+      component: `${postTemplate}?__contentFilePath=${node.internal.contentFilePath}`,
       context: {
         slug: node.frontmatter.slug,
       },
