@@ -7,10 +7,11 @@
 
 import React, { useState } from "react";
 import { Footer, Navbar, Sidebar } from "./index";
+import "./../css/main.css";
 
 export default function Layout({ children }) {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
-  
+
   //  const toggleSidebar = () => {
   //    setIsSidebarOpen(!isSidebarOpen);
   //  };
