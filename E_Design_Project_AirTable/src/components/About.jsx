@@ -1,12 +1,25 @@
-import React from 'react'
-import styled from 'styled-components'
-import Title from './Title'
-import services from '../constants/services'
-const About = () => {
+import React from "react";
+import styled from "styled-components";
+import { Title } from "./index";
+import services from "../constants/services";
+
+export default function About() {
   return (
-    <h2>about component</h2>
-  )
+    <Wrapper className="section">
+      <Title title="about us" />
+      <div className="section-center">
+        {services.map((service) => (
+          <article key={service.id}>
+            <span>{service.icon}</span>
+            <h4>{service.label}</h4>
+            <p>{service.text}</p>
+          </article>
+        ))}
+      </div>
+    </Wrapper>
+  );
 }
+
 const Wrapper = styled.section`
   .section-center {
     margin-top: 4rem;
@@ -37,5 +50,4 @@ const Wrapper = styled.section`
       grid-template-columns: repeat(4, 1fr);
     }
   }
-`
-export default About
+`;
