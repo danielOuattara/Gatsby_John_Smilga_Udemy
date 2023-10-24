@@ -5,20 +5,16 @@
  * See: https://www.gatsbyjs.org/docs/use-static-query/
  */
 
-import React, { useContext } from 'react'
-import Navbar from './Navbar'
-import Footer from './Footer'
-import Sidebar from './Sidebar'
-import { GatsbyContext } from '../context/context'
+import React, { useContext } from "react";
+import { Navbar, Footer, Sidebar } from "./index";
+import { GatsbyContext } from "../context/context";
 
-const Layout = ({ children }) => {
-  
-
+export default function Layout(props) {
   return (
     <>
-      {children}
+      <Navbar />
+      {props.children}
+      <Footer />
     </>
-  )
+  );
 }
-
-export default Layout
