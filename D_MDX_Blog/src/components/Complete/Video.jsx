@@ -1,17 +1,18 @@
 import React from "react";
 import video from "../../assets/connect.mp4";
 import styled from "styled-components";
-export const RegVideo = () => {
+
+export function RegularVideo() {
   return (
-    <RegVideoWrapper>
+    <RegularVideoWrapper>
       <video controls autoPlay muted loop>
         <source src={video} type="video/mp4" />
       </video>
-    </RegVideoWrapper>
+    </RegularVideoWrapper>
   );
-};
+}
 
-export const Video = ({ src, title, ...props }) => {
+export function Video({ src, title, ...props }) {
   return (
     <IframeVideoWrapper>
       <div className="video">
@@ -27,9 +28,9 @@ export const Video = ({ src, title, ...props }) => {
       </div>
     </IframeVideoWrapper>
   );
-};
+}
 
-const RegVideoWrapper = styled.div`
+const RegularVideoWrapper = styled.div`
   width: 90vw;
   max-width: 700px;
   height: 30vh;
@@ -57,12 +58,12 @@ const IframeVideoWrapper = styled.div`
   }
 
   .video iframe {
-    border: 0;
-    height: 100%;
-    left: 0;
     position: absolute;
+    border: 0;
+    left: 0;
     top: 0;
     width: 100%;
+    height: 100%;
   }
 `;
 

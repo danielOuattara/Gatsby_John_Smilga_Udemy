@@ -10,15 +10,11 @@ readTime: 50
 
 import { Link } from "gatsby";
 import { FiInfo } from "react-icons/fi";
-import { Counter, LikeButton } from "./../components/Complete";
+import { Counter, LikeButton, RegularVideo, Video } from "./../components";
 
 <section className="mdx-page">
 
-<div className="mdx-img">
-
-![nice image](./../assets/gatsby-1.png)
-
-</div>
+## my first mdx file
 
 [visit Google](https://www.google.com)
 
@@ -135,6 +131,11 @@ export default LikeButton;
 ```
 
 <LikeButton />
+
+<h2> Video component </h2>
+
+<RegularVideo />
+<Video />
 
 <Link to="/posts" className="btn center-btn">
   navigate to all posts page

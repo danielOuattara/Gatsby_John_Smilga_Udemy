@@ -18,7 +18,7 @@ import Counter from "./Complete/Counter";
 import Headings from "./Complete/Headings";
 import LikeButton from "./Complete/LikeButton";
 import PrismSetup from "./Complete/PrismSetup";
-import Video from "./Complete/Video";
+import { Video, RegularVideo } from "./Complete";
 //--------------------------------------------------
 import Posts from "./Posts";
 import Post from "./Posts/Post";
@@ -45,6 +45,7 @@ export {
   LikeButton,
   PrismSetup,
   Video,
+  RegularVideo,
   //--
   Posts,
   Post,
