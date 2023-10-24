@@ -34,21 +34,25 @@ export default function PostTemplate(props) {
           </div>
 
           <MDXProvider components={frontmatter.embeddedImages}>
-            <GatsbyImage
-              image={getImage(frontmatter.embeddedImages[0])}
-              alt="backroad"
-              className="first-inline-img"
-            />
-            <GatsbyImage
-              image={getImage(frontmatter.embeddedImages[1])}
-              alt="backroad"
-              className="first-inline-img"
-            />
-            <GatsbyImage
-              image={getImage(frontmatter.embeddedImages[2])}
-              alt="backroad"
-              className="first-inline-img"
-            />
+            {frontmatter.embeddedImages && (
+              <>
+                <GatsbyImage
+                  image={getImage(frontmatter.embeddedImages[0])}
+                  alt="backroad"
+                  className="first-inline-img"
+                />
+                <GatsbyImage
+                  image={getImage(frontmatter.embeddedImages[1])}
+                  alt="backroad"
+                  className="first-inline-img"
+                />
+                <GatsbyImage
+                  image={getImage(frontmatter.embeddedImages[2])}
+                  alt="backroad"
+                  className="first-inline-img"
+                />
+              </>
+            )}
             {props.children}
           </MDXProvider>
         </article>
