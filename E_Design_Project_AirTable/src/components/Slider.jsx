@@ -1,81 +1,76 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect } from "react";
+import { Title } from "./index";
+import styled from "styled-components";
+import { GatsbyImage, getImage } from "gatsby-plugin-image";
+import { FiChevronRight, FiChevronLeft } from "react-icons/fi";
+import { FaQuoteRight } from "react-icons/fa";
 
-import Title from './Title'
-import styled from 'styled-components'
-import { FaQuoteRight } from 'react-icons/fa'
-import { GatsbyImage, getImage } from 'gatsby-plugin-image'
-import { FiChevronRight, FiChevronLeft } from 'react-icons/fi'
-
-const Slider = ({ customers = [] }) => {
-  const [index, setIndex] = React.useState(0)
+export default function Slider({ customers = [] }) {
+  const [index, setIndex] = useState(0);
 
   const nextSlide = () => {
-    setIndex(oldIndex => {
-      let index = oldIndex + 1
+    return setIndex((oldIndex) => {
+      let index = oldIndex + 1;
       if (index > customers.length - 1) {
-        index = 0
+        index = 0;
       }
-      return index
-    })
-  }
+      return index;
+    });
+  };
+
   const prevSlide = () => {
-    setIndex(oldIndex => {
-      let index = oldIndex - 1
+    return setIndex((oldIndex) => {
+      let index = oldIndex - 1;
       if (index < 0) {
-        index = customers.length - 1
+        index = customers.length - 1;
       }
-      return index
-    })
-  }
+      return index;
+    });
+  };
+
   useEffect(() => {
     let slider = setInterval(() => {
-      setIndex(oldIndex => {
-        let index = oldIndex + 1
+      return setIndex((oldIndex) => {
+        let index = oldIndex + 1;
         if (index > customers.length - 1) {
-          index = 0
+          index = 0;
         }
-        return index
-      })
-    }, 5000)
-    return () => {
-      clearInterval(slider)
-    }
-  }, [index])
+        return index;
+      });
+    }, 5000);
+
+    return () => clearInterval(slider);
+  }, [index]);
 
   return (
     <Wrapper className="section">
       <Title title="reviews" />
       <div className="section-center">
         {customers.map((customer, customerIndex) => {
-          const {
-            data: { image, name, title, quote },
-          } = customer
-          const customerImg = getImage(image.localFiles[0])
-
-          let position = 'nextSlide'
+          let position = "nextSlide";
           if (customerIndex === index) {
-            position = 'activeSlide'
+            position = "activeSlide";
           }
           if (
             customerIndex === index - 1 ||
             (index === 0 && customerIndex === customers.length - 1)
           ) {
-            position = 'lastSlide'
+            position = "lastSlide";
           }
 
           return (
             <article className={position} key={customerIndex}>
               <GatsbyImage
-                image={customerImg}
+                image={getImage(customer.data.image.localFiles[0])}
                 className="img"
-                alt={name}
+                alt={customer.data.name}
               ></GatsbyImage>
-              <h4>{name}</h4>
-              <p className="title">{title}</p>
-              <p className="text">{quote}</p>
+              <h4>{customer.data.name}</h4>
+              <p className="title">{customer.data.title}</p>
+              <p className="text">{customer.data.quote}</p>
               <FaQuoteRight className="icon" />
             </article>
-          )
+          );
         })}
         <button className="prev" onClick={prevSlide}>
           <FiChevronLeft />
@@ -85,7 +80,7 @@ const Slider = ({ customers = [] }) => {
         </button>
       </div>
     </Wrapper>
-  )
+  );
 }
 
 const Wrapper = styled.div`
@@ -103,7 +98,7 @@ const Wrapper = styled.div`
     .img {
       border-radius: 50%;
       margin-bottom: 1rem;
-       display: inline-block !important;
+      display: inline-block !important;
     }
     h4 {
       text-transform: uppercase;
@@ -180,5 +175,4 @@ const Wrapper = styled.div`
       transform: translateX(100%);
     }
   }
-`
-export default Slider
+`;
