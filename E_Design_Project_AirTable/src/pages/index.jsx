@@ -11,22 +11,23 @@ import {
 } from "../components";
 
 export default function HomePage(props) {
-  // console.log(props);
+  console.log(props);
 
-  const projects = props.data.allAirtable.nodes;
-  console.log("projects = ", projects);
+  const projects = props.data.projects.nodes;
+  // console.log("projects = ", projects);
   return (
     <Layout>
       <Hero />
       <About />
       <Projects projects={projects} title={"latest projects"} />
+      <Slider customers={props.data.customers.nodes} />
     </Layout>
   );
 }
 
 export const query = graphql`
   query {
-    allAirtable(
+    projects: allAirtable(
       filter: { table: { eq: "projects" } }
       limit: 3
       sort: { data: { date: DESC } }
@@ -40,7 +41,33 @@ export const query = graphql`
           image {
             localFiles {
               childImageSharp {
-                gatsbyImageData(layout: CONSTRAINED, placeholder: TRACED_SVG)
+                gatsbyImageData(
+                  layout: CONSTRAINED
+                  placeholder: DOMINANT_COLOR
+                )
+              }
+            }
+          }
+        }
+      }
+    }
+    customers: allAirtable(filter: { table: { eq: "customers" } }) {
+      totalCount
+      nodes {
+        id
+        data {
+          name
+          quote
+          title
+          image {
+            localFiles {
+              childImageSharp {
+                gatsbyImageData(
+                  layout: FIXED
+                  width: 150
+                  height: 150
+                  placeholder: DOMINANT_COLOR
+                )
               }
             }
           }
