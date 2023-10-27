@@ -10,13 +10,11 @@ import {
   GridProjects,
 } from "../components";
 
-const HomePage = () => {
+export default function HomePage() {
   return (
     <Layout>
       <Hero />
       <About />
     </Layout>
   );
-};
-
-export default HomePage;
+}

@@ -1,3 +1,5 @@
-import { wrapRootElement as globalWrapper } from "./rootWrapper";
+import React from "react";
 
-export const wrapRootElement = globalWrapper;
+export function wrapRootElement({ element }) {
+  return <>{element}</>;
+}

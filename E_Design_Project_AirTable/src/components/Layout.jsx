@@ -8,6 +8,7 @@
 import React, { useContext } from "react";
 import { Navbar, Footer, Sidebar } from "./index";
 import { GatsbyContext } from "../context/context";
+import "./global.css";
 
 export default function Layout(props) {
   return (
