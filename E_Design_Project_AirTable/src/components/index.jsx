@@ -1,5 +1,6 @@
 import About from "./About";
-import Airtable from "./Airtable";
+// import Airtable from "./Airtable";
+import base from "./Airtable";
 import Algolia from "./Algolia";
 import Footer from "./Footer";
 import GridProjects from "./GridProjects";
@@ -17,7 +18,8 @@ import Title from "./Title";
 
 export {
   About,
-  Airtable,
+  // Airtable,
+  base,
   Algolia,
   Footer,
   GridProjects,

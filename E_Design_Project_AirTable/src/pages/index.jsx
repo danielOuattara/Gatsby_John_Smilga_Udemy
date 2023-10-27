@@ -20,6 +20,7 @@ export default function HomePage(props) {
       <Hero />
       <About />
       <Projects projects={projects} title={"latest projects"} />
+      <Survey />
       <Slider customers={props.data.customers.nodes} />
     </Layout>
   );
