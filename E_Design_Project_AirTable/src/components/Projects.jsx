@@ -1,16 +1,41 @@
-import React from 'react'
-import { Link } from 'gatsby'
-import Title from './Title'
-import styled from 'styled-components'
-import { GatsbyImage, getImage } from 'gatsby-plugin-image'
-import SearchButtons from './SearchButtons'
+import React, { useState } from "react";
+import { Link } from "gatsby";
+import { Title, SearchButtons } from "./index";
+import styled from "styled-components";
+import { GatsbyImage, getImage } from "gatsby-plugin-image";
 
-const Projects = () => {
-  
-
+export default function Projects(props) {
+  const [filteredProjects, setFilteredProjects] = useState(props.projects);
   return (
-    <h2>projects</h2>
-  )
+    <Wrapper className="section">
+      <Title title={props.title} />
+      {/* <SearchButtons /> */}
+      <div className="section-center">
+        {filteredProjects.map((project) => (
+          <article key={project.id}>
+            <div className="container">
+              <GatsbyImage
+                image={getImage(
+                  project.data.image.localFiles[0].childImageSharp,
+                )}
+                alt={project.data.name}
+                className="img"
+              />
+              <div className="info">
+                <p>- {project.data.type} -</p>
+                <h3>{project.data.name}</h3>
+              </div>
+            </div>
+          </article>
+        ))}
+      </div>
+      {!props.page && (
+        <Link to="/projects" className="btn">
+          all projects
+        </Link>
+      )}
+    </Wrapper>
+  );
 }
 
 const Wrapper = styled.section`
@@ -89,5 +114,4 @@ const Wrapper = styled.section`
     margin: 0 auto;
     margin-top: 3rem;
   }
-`
-export default Projects
+`;
