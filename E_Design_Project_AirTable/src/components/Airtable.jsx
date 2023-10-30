@@ -6,7 +6,6 @@ export default new Airtable({
 
 /* 
 
-
 var Airtable = require('airtable');
 var base = new Airtable({apiKey: 'YOUR_SECRET_API_TOKEN'}).base('app01mKSn0aOKJAPW');
 
@@ -40,7 +39,7 @@ Retrieved bedroom
 
 Fetch first page
 
-// If you only want the first page of records, you can
+// ===> If you only want the first page of records, you can
 // use `firstPage` instead of `eachPage`.
 base('survey').select({
     view: 'Grid view'
@@ -51,7 +50,7 @@ base('survey').select({
     });
 });
 
-Fetch additional record metadata
+===> Fetch additional record metadata
 
 // If you want to fetch the number of comments for each record,
 // include the `recordMetadata` param.

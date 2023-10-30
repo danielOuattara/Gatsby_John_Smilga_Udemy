@@ -11,7 +11,7 @@ import {
 } from "../components";
 
 export default function HomePage(props) {
-  console.log(props);
+  // console.log(props);
 
   const projects = props.data.projects.nodes;
   // console.log("projects = ", projects);

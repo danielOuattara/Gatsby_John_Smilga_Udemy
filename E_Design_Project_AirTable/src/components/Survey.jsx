@@ -1,11 +1,37 @@
 import React, { useEffect, useState } from "react";
 import { Title, base } from "./index";
 import styled from "styled-components";
-// import {base} from "./Airtable";
 import { FaVoteYea } from "react-icons/fa";
 
-console.log("base = ", base);
 export default function Survey() {
+  const [items, setItems] = useState([]);
+  const [loading, setLoading] = useState(true);
+
+  const getRecords = async () => {
+    const records = await base("survey")
+      .select({})
+      .firstPage()
+      .catch((error) => console.log(error));
+
+    // console.log("records = ", records);
+
+    const newItems = records.map((record) => ({
+      id: record.id,
+      fields: record.fields,
+    }));
+
+    // console.log("newItems = ", newItems);
+
+    setItems(newItems);
+    setLoading(false);
+  };
+
+  useEffect(() => {
+    getRecords();
+  }, []);
+
+  console.log(items);
+
   return <h2>survey component</h2>;
 }
 
