@@ -5,32 +5,102 @@ import { FaVoteYea } from "react-icons/fa";
 
 export default function Survey() {
   const [items, setItems] = useState([]);
-  const [loading, setLoading] = useState(true);
+  const [loading, setLoading] = useState(false);
 
   const getRecords = async () => {
+    setLoading(true);
     const records = await base("survey")
       .select({})
       .firstPage()
       .catch((error) => console.log(error));
 
-    // console.log("records = ", records);
-
     const newItems = records.map((record) => ({
       id: record.id,
       fields: record.fields,
     }));
-
-    // console.log("newItems = ", newItems);
-
     setItems(newItems);
     setLoading(false);
   };
+
+  //-------------------------------------------- method 1 from John
+  // const giveVote = async (id) => {
+  //   setLoading(true);
+  //   const updatedItems = [...items].map((item) => {
+  //     if (item.id === id) {
+  //       return {
+  //         id,
+  //         fields: { ...item.fields, votes: item.fields.votes + 1 },
+  //       };
+  //     } else {
+  //       return item;
+  //     }
+  //   });
+
+  //   const updatedRecords = await base("survey")
+  //     .update(updatedItems)
+  //     .catch((error) => console.log(error));
+
+  //   const newItems = updatedItems.map((record) => ({
+  //     id: record.id,
+  //     fields: record.fields,
+  //   }));
+
+  //   setItems(newItems);
+  //   setLoading(false);
+  // };
+
+  //-------------------------------------------- method 2 from Me
+
+  // const giveVote = async (id) => {
+  //   setLoading(true);
+  //   const updatedItems = [...items].map((item) => {
+  //     if (item.id === id) {
+  //       return {
+  //         id,
+  //         fields: { ...item.fields, votes: item.fields.votes + 1 },
+  //       };
+  //     } else {
+  //       return item;
+  //     }
+  //   });
+
+  //   const updatedRecords = await base("survey")
+  //     .update(updatedItems)
+  //     .catch((error) => console.log(error));
+  //   getRecords();
+  // };
+
+  //--------------------------------------------
+  /*
+   * Method 3 from Me + reading Airtable docs:
+   * Send as update, only the item to be updated,
+   * not the whole items
+   */
+  const giveVote = async (id) => {
+    setLoading(true);
+    let itemToUpdate = items.find((item) => item.id === id);
+    itemToUpdate = {
+      ...itemToUpdate,
+      fields: {
+        ...itemToUpdate.fields,
+        votes: itemToUpdate.fields.votes + 1,
+      },
+    };
+
+    const updatedRecord = await base("survey")
+      .update([itemToUpdate])
+      .catch((error) => console.log(error));
+
+    getRecords();
+  };
+
+  //---------------------------------------------
 
   useEffect(() => {
     getRecords();
   }, []);
 
-  console.log(items);
+  // console.log(items);
 
   return (
     <Wrapper className="section">
@@ -50,7 +120,7 @@ export default function Survey() {
                   <h4>{item.fields.name}</h4>
                   <p>{item.fields.votes}</p>
                 </div>
-                <button onClick={() => console.log("Clicked !")}>
+                <button onClick={() => giveVote(item.id)}>
                   {" "}
                   <FaVoteYea />
                 </button>
