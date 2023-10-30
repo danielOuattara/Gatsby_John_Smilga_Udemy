@@ -32,7 +32,35 @@ export default function Survey() {
 
   console.log(items);
 
-  return <h2>survey component</h2>;
+  return (
+    <Wrapper className="section">
+      <div className="container">
+        <Title title={"survey"} />
+        <h3>most import room in the house ?</h3>
+        {loading ? (
+          <h3>loading...</h3>
+        ) : (
+          <ul>
+            {items.map((item) => (
+              <li key={item.id}>
+                <div className="key">
+                  {item.fields.name.toUpperCase().substring(0, 2)}
+                </div>
+                <div>
+                  <h4>{item.fields.name}</h4>
+                  <p>{item.fields.votes}</p>
+                </div>
+                <button onClick={() => console.log("Clicked !")}>
+                  {" "}
+                  <FaVoteYea />
+                </button>
+              </li>
+            ))}
+          </ul>
+        )}
+      </div>
+    </Wrapper>
+  );
 }
 
 const Wrapper = styled.section`
