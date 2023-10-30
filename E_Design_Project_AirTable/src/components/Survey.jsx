@@ -87,7 +87,7 @@ export default function Survey() {
       },
     };
 
-    const updatedRecord = await base("survey")
+    await base("survey")
       .update([itemToUpdate])
       .catch((error) => console.log(error));
 
