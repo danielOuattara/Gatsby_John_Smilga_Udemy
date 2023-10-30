@@ -5,13 +5,23 @@ import styled from "styled-components";
 import { GatsbyImage, getImage } from "gatsby-plugin-image";
 
 export default function Projects(props) {
-  const [filteredProjects, setFilteredProjects] = useState(props.projects);
+  const [projects, setProjects] = useState(props.projects);
+
+  const setBackToAllProject = () => setProjects(props.projects);
+
   return (
     <Wrapper className="section">
       <Title title={props.title} />
       {/* <SearchButtons /> */}
+      {props.page && (
+        <SearchButtons
+          projects={props.projects}
+          setProjects={setProjects}
+          setBackToAllProject={setBackToAllProject}
+        />
+      )}
       <div className="section-center">
-        {filteredProjects.map((project) => (
+        {projects.map((project) => (
           <article key={project.id}>
             <div className="container">
               <GatsbyImage

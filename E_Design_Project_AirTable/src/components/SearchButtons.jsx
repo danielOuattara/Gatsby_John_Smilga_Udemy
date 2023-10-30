@@ -1,13 +1,8 @@
-import React from 'react'
-import styled from 'styled-components'
+import React from "react";
+import styled from "styled-components";
 
-const SearchButtons = () => {
-  
-
-  
-  return (
-    <h2>search buttons</h2>
-  )
+export default function SearchButtons(props) {
+  return <h2>search buttons</h2>;
 }
 const Wrapper = styled.section`
   display: flex;
@@ -31,5 +26,4 @@ const Wrapper = styled.section`
   button.active {
     box-shadow: 0px 1.5px 0 var(--clr-grey-6);
   }
-`
-export default SearchButtons
+`;
