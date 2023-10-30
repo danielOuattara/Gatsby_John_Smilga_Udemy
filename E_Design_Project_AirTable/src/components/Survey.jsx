@@ -107,27 +107,24 @@ export default function Survey() {
       <div className="container">
         <Title title={"survey"} />
         <h3>most import room in the house ?</h3>
-        {loading ? (
-          <h3>loading...</h3>
-        ) : (
-          <ul>
-            {items.map((item) => (
-              <li key={item.id}>
-                <div className="key">
-                  {item.fields.name.toUpperCase().substring(0, 2)}
-                </div>
-                <div>
-                  <h4>{item.fields.name}</h4>
-                  <p>{item.fields.votes}</p>
-                </div>
-                <button onClick={() => giveVote(item.id)}>
-                  {" "}
-                  <FaVoteYea />
-                </button>
-              </li>
-            ))}
-          </ul>
-        )}
+
+        <ul>
+          {items.map((item) => (
+            <li key={item.id}>
+              <div className="key">
+                {item.fields.name.toUpperCase().substring(0, 2)}
+              </div>
+              <div>
+                <h4>{item.fields.name}</h4>
+                <p>{item.fields.votes}</p>
+              </div>
+              <button disabled={loading} onClick={() => giveVote(item.id)}>
+                {" "}
+                <FaVoteYea />
+              </button>
+            </li>
+          ))}
+        </ul>
       </div>
     </Wrapper>
   );
