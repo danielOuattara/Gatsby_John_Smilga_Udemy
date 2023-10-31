@@ -4,30 +4,18 @@ import styled from "styled-components";
 export default function SearchButtons(props) {
   const [index, setIndex] = React.useState(0);
 
-  const projectsType = [
-    "all",
-    ...new Set(props.projects.map((project) => project.data.type)),
-  ];
-
-  const filterProject = (type, index) => {
+  const selectType = (type, index) => {
     setIndex(index);
-    if (type === "all") {
-      return props.setBackToAllProject();
-    } else {
-      const projectsToRender = props.projects.filter(
-        (project) => project.data.type === type,
-      );
-      return props.setProjects(projectsToRender);
-    }
+    return props.setSelectedType(type);
   };
 
   return (
     <Wrapper>
-      {projectsType.map((projectType, typeIndex) => (
+      {props.projectsType.map((projectType, typeIndex) => (
         <button
           key={typeIndex}
           className={index === typeIndex ? "active" : ""}
-          onClick={() => filterProject(projectType, typeIndex)}
+          onClick={() => selectType(projectType, typeIndex)}
         >
           {projectType}
         </button>

@@ -1,13 +1,28 @@
-import React, { useState } from "react";
+import React from "react";
 import { Link } from "gatsby";
 import { Title, SearchButtons } from "./index";
 import styled from "styled-components";
 import { GatsbyImage, getImage } from "gatsby-plugin-image";
 
 export default function Projects(props) {
-  const [projects, setProjects] = useState(props.projects);
+  const [projects, setProjects] = React.useState(props.projects);
+  const [selectedType, setSelectedType] = React.useState("all");
 
-  const setBackToAllProject = () => setProjects(props.projects);
+  const projectsType = [
+    "all",
+    ...new Set(props.projects.map((project) => project.data.type)),
+  ];
+
+  React.useEffect(() => {
+    if (selectedType === "all") {
+      return setProjects(props.projects);
+    } else {
+      const projectsToRender = props.projects.filter(
+        (project) => project.data.type === selectedType,
+      );
+      return setProjects(projectsToRender);
+    }
+  }, [selectedType]);
 
   return (
     <Wrapper className="section">
@@ -15,9 +30,8 @@ export default function Projects(props) {
       {/* <SearchButtons /> */}
       {props.page && (
         <SearchButtons
-          projects={props.projects}
-          setProjects={setProjects}
-          setBackToAllProject={setBackToAllProject}
+          projectsType={projectsType}
+          setSelectedType={setSelectedType}
         />
       )}
       <div className="section-center">
