@@ -4,8 +4,17 @@ import sublinks from "../constants/links";
 const GatsbyContext = React.createContext();
 
 export default function GatsbyContextProvider(props) {
+  const [isSidebarOpen, setIsSidebarOpen] = useState(true);
+  const [links] = useState(sublinks);
+
+  const context = {
+    isSidebarOpen,
+    setIsSidebarOpen,
+    links,
+  };
+
   return (
-    <GatsbyContext.Provider value={"HELLO WORLD!!!"}>
+    <GatsbyContext.Provider value={{ ...context }}>
       {props.children}
     </GatsbyContext.Provider>
   );

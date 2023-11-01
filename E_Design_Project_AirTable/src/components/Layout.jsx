@@ -11,12 +11,14 @@ import { useGatsbyContext } from "../context/GatsbyContext";
 import "./global.css";
 
 export default function Layout(props) {
-  console.log("====================================");
-  console.log(useGatsbyContext());
-  console.log("====================================");
+  const { isSidebarOpen, setIsSidebarOpen, links } = useGatsbyContext();
+
   return (
     <>
       <Navbar />
+
+      {isSidebarOpen && <Sidebar />}
+
       {props.children}
       <Footer />
     </>
