@@ -5,7 +5,7 @@
  * See: https://www.gatsbyjs.org/docs/use-static-query/
  */
 
-import React, { useContext } from "react";
+import React from "react";
 import { Navbar, Footer, Sidebar } from "./index";
 import { useGatsbyContext } from "../context/GatsbyContext";
 import "./global.css";
@@ -16,9 +16,7 @@ export default function Layout(props) {
   return (
     <>
       <Navbar />
-
       {isSidebarOpen && <Sidebar />}
-
       {props.children}
       <Footer />
     </>

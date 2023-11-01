@@ -7,10 +7,13 @@ export default function GatsbyContextProvider(props) {
   const [isSidebarOpen, setIsSidebarOpen] = useState(true);
   const [links] = useState(sublinks);
 
+  const toggleSidebar = () => setIsSidebarOpen(!isSidebarOpen);
+
   const context = {
     isSidebarOpen,
     setIsSidebarOpen,
     links,
+    toggleSidebar,
   };
 
   return (

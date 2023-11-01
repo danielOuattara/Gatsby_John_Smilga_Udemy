@@ -5,12 +5,13 @@ import { Link } from "gatsby";
 import { useGatsbyContext } from "../context/GatsbyContext";
 
 export default function Sidebar() {
-  const { isSidebarOpen, setIsSidebarOpen, links } = useGatsbyContext();
+  const { isSidebarOpen, setIsSidebarOpen, links, toggleSidebar } =
+    useGatsbyContext();
   return (
     <Wrapper>
       <div className="container">
         <button>
-          <MdClose className="icon" />
+          <MdClose className="icon" onClick={toggleSidebar} />
         </button>
         <div className="links">
           {links.map((link, index) => (
@@ -30,7 +31,7 @@ const Wrapper = styled.aside`
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0, 0, 0, 0.4);
+  background: rgba(0, 0, 0, 0.6);
   z-index: 10;
   display: flex;
   align-items: center;

@@ -4,9 +4,11 @@ import logo from "../images/logo.svg";
 import GoThreeBars from "./../constants/GoThreebars";
 import { Link } from "gatsby";
 import { NavLink } from "./index";
-// import { GatsbyContext } from "../context/context";
+import { useGatsbyContext } from "../context/GatsbyContext";
 
 export default function Navbar() {
+  const { isSidebarOpen, setIsSidebarOpen, links, toggleSidebar } =
+    useGatsbyContext();
   return (
     <Wrapper>
       <div className="nav-center">
@@ -14,7 +16,7 @@ export default function Navbar() {
           <Link to="/">
             <img src={logo} alt="design logo" />
           </Link>
-          <button className="toggle-btn">
+          <button className="toggle-btn" onClick={toggleSidebar}>
             <GoThreeBars />
           </button>
         </div>
