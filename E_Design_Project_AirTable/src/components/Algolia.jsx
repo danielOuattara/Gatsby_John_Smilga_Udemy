@@ -31,7 +31,7 @@ function Hit({ hit }) {
 
 export default function Search() {
   return (
-    <section>
+    <Wrapper>
       <Title title={" algolia search"} />
       <InstantSearch
         searchClient={searchClient}
@@ -40,7 +40,7 @@ export default function Search() {
         <SearchBox />
         <Hits />
       </InstantSearch>
-    </section>
+    </Wrapper>
   );
 }
 
