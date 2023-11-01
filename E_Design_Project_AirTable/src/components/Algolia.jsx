@@ -35,6 +35,9 @@ export default function Search() {
         indexName={process.env.GATSBY_ALGOLIA_INDEX_NAME}
       >
         <SearchBox placeholder="Search here... 🔎" />
+
+        <SearchBox />
+
         <Hits />
       </InstantSearch>
     </Wrapper>
