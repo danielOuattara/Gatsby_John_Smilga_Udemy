@@ -11,6 +11,7 @@ export default function ProjectsPage(props) {
     <Wrapper>
       <Layout>
         <Projects title="our projects" projects={projects} page />
+        <Algolia />
       </Layout>
     </Wrapper>
   );

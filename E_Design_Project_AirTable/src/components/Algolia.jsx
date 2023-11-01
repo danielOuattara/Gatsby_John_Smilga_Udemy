@@ -1,21 +1,47 @@
-import React from 'react'
-import styled from 'styled-components'
-import { GatsbyImage } from 'gatsby-plugin-image'
-import Title from './Title'
-import algoliasearch from 'algoliasearch/lite'
+import React from "react";
+import styled from "styled-components";
+import { GatsbyImage } from "gatsby-plugin-image";
+import { Title } from "./index";
+import algoliasearch from "algoliasearch/lite";
 import {
   InstantSearch,
   SearchBox,
   Hits,
   connectHits,
-} from 'react-instantsearch-dom'
+} from "react-instantsearch";
 
+// GATSBY_ALGOLIA_ADMIN_KEY=62b2b20a4dae05226b1b570e9ca0c342
+// GATSBY_ALGOLIA_APP_ID=SDXRSGYKTO
+// GATSBY_ALGOLIA_INDEX_NAME=projects-gatsby-airtable
+// GATSBY_ALGOLIA_SEARCH_KEY=1c3d765b0f2e8dff288b47210754eea5
 
+const searchClient = algoliasearch(
+  process.env.GATSBY_ALGOLIA_APP_ID,
+  process.env.GATSBY_ALGOLIA_SEARCH_KEY,
+);
 
-const Search = () => {
+function Hit({ hit }) {
   return (
-    <h2>algolia search</h2>
-  )
+    <article>
+      <img src={hit.image} alt={hit.name} />
+      <h1>{hit.name}</h1>
+    </article>
+  );
+}
+
+export default function Search() {
+  return (
+    <section>
+      <Title title={" algolia search"} />
+      <InstantSearch
+        searchClient={searchClient}
+        indexName={process.env.GATSBY_ALGOLIA_INDEX_NAME}
+      >
+        <SearchBox />
+        <Hits />
+      </InstantSearch>
+    </section>
+  );
 }
 
 const Wrapper = styled.section`
@@ -50,7 +76,7 @@ const Wrapper = styled.section`
       }
     }
   }
-`
+`;
 
 const Container = styled.div`
   display: grid;
@@ -89,6 +115,4 @@ const Container = styled.div`
   @media (min-width: 1200px) {
     grid-template-columns: repeat(4, 1fr);
   }
-`
-
-export default Search
+`;
