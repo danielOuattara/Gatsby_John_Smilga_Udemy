@@ -9,6 +9,9 @@ import { useGatsbyContext } from "../context/GatsbyContext";
 export default function Navbar() {
   const { isSidebarOpen, setIsSidebarOpen, links, toggleSidebar } =
     useGatsbyContext();
+
+  const rootLinks = [...new Set(links.map((link) => link.page))];
+  console.log(rootLinks);
   return (
     <Wrapper>
       <div className="nav-center">
@@ -21,15 +24,9 @@ export default function Navbar() {
           </button>
         </div>
         <ul className="nav-links">
-          <li>
-            <button>products</button>
-          </li>
-          <li>
-            <button>developers</button>
-          </li>
-          <li>
-            <button>company</button>
-          </li>
+          {rootLinks.map((rootPage, index) => (
+            <NavLink key={index} rootPage={rootPage} />
+          ))}
         </ul>
       </div>
     </Wrapper>

@@ -1,5 +1,5 @@
-import React from "react"
-import { FaCcStripe, FaCreditCard, FaAlipay } from "react-icons/fa"
+import React from "react";
+import { FaCcStripe, FaCreditCard, FaAlipay } from "react-icons/fa";
 export default [
   {
     page: "products",
@@ -55,4 +55,4 @@ export default [
     url: `/products/payments`,
     icon: <FaCcStripe className="icon" />,
   },
-]
+];

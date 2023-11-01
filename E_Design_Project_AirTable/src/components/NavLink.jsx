@@ -2,10 +2,29 @@ import React, { useContext } from "react";
 
 import styled from "styled-components";
 import { Link } from "gatsby";
-// import { GatsbyContext } from '../context/context'
-const NavLink = () => {
-  return <h2>nav link</h2>;
-};
+import { useGatsbyContext } from "../context/GatsbyContext";
+
+export default function NavLink(props) {
+  const { links } = useGatsbyContext();
+  return (
+    <Wrapper>
+      <button>{props.rootPage}</button>
+      <div className="links">
+        {links.map((link, index) => {
+          if (link.page === props.rootPage) {
+            return (
+              <Link key={index} to={link.url}>
+                {link.icon} {link.label}
+              </Link>
+            );
+          }
+          return;
+        })}
+        <div className="caret"></div>
+      </div>
+    </Wrapper>
+  );
+}
 
 const Wrapper = styled.li`
   padding: 1rem 0;
@@ -71,5 +90,3 @@ const Wrapper = styled.li`
     transform: translateX(-50%);
   }
 `;
-
-export default NavLink;
