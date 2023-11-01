@@ -4,7 +4,7 @@ import logo from "../images/logo.svg";
 import GoThreeBars from "./../constants/GoThreebars";
 import { Link } from "gatsby";
 import { NavLink } from "./index";
-import { GatsbyContext } from "../context/context";
+// import { GatsbyContext } from "../context/context";
 
 export default function Navbar() {
   return (

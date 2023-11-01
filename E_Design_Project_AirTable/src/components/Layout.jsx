@@ -7,10 +7,13 @@
 
 import React, { useContext } from "react";
 import { Navbar, Footer, Sidebar } from "./index";
-import { GatsbyContext } from "../context/context";
+import { useGatsbyContext } from "../context/GatsbyContext";
 import "./global.css";
 
 export default function Layout(props) {
+  console.log("====================================");
+  console.log(useGatsbyContext());
+  console.log("====================================");
   return (
     <>
       <Navbar />
