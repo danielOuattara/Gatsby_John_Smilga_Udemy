@@ -76,7 +76,7 @@ function pageToAlgoliaRecords(item) {
     name: item.data.name,
     type: item.data.type,
     date: item.data.date,
-    image: { ...item.data.image.localFiles[0].childImageSharp.gastbyImageData },
+    image: item.data.image.localFiles[0].childImageSharp.gatsbyImageData,
   };
 }
 

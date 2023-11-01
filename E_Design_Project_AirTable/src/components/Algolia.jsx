@@ -3,28 +3,33 @@ import styled from "styled-components";
 import { GatsbyImage } from "gatsby-plugin-image";
 import { Title } from "./index";
 import algoliasearch from "algoliasearch/lite";
-import {
-  InstantSearch,
-  SearchBox,
-  Hits,
-  connectHits,
-} from "react-instantsearch";
 
-import { connectHits } from "instantsearch.js/es/connectors";
+// import { InstantSearch, SearchBox, Hits, useHits } from "react-instantsearch";  // --- 1
+import { InstantSearch, SearchBox, connectHits } from "react-instantsearch-dom";
 
 const searchClient = algoliasearch(
   process.env.GATSBY_ALGOLIA_APP_ID,
   process.env.GATSBY_ALGOLIA_SEARCH_KEY,
 );
+//--- 1 OK
+// function CustomHits(props) {
+//   const { hits, results, sendEvent } = useHits(props);
+//   return hits.map((hit) => (
+//     <article key={hit.objectID}>
+//       <GatsbyImage image={hit.image} className="img" alt={hit.name} />
+//       <h4>{hit.name}</h4>
+//     </article>
+//   ));
+// }
 
-function Hit({ hit }) {
-  return (
-    <article>
-      <img src={hit.image} alt={hit.name} />
-      <h1>{hit.name}</h1>
+const CustomHits_2 = connectHits(({ hits }) => {
+  return hits.map((hit) => (
+    <article key={hit.objectID}>
+      <GatsbyImage image={hit.image} className="img" alt={hit.name} />
+      <h4>{hit.name}</h4>
     </article>
-  );
-}
+  ));
+});
 
 export default function Search() {
   return (
@@ -35,10 +40,11 @@ export default function Search() {
         indexName={process.env.GATSBY_ALGOLIA_INDEX_NAME}
       >
         <SearchBox placeholder="Search here... 🔎" />
-
-        <SearchBox />
-
-        <Hits />
+        <Container className="section-center">
+          {/* --- 1 */}
+          {/* <CustomHits /> */}
+          <CustomHits_2 />
+        </Container>
       </InstantSearch>
     </Wrapper>
   );
@@ -83,6 +89,7 @@ const Container = styled.div`
   gap: 2rem;
   /* safari workaround */
   grid-gap: 2rem;
+
   article {
     background: var(--clr-white);
     text-align: center;

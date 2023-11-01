@@ -4,7 +4,7 @@ import styled from "styled-components";
 import { Layout, Projects, Algolia } from "../components";
 
 export default function ProjectsPage(props) {
-  console.log(props);
+  // console.log(props);
   const projects = props.data.projects.nodes;
 
   return (
