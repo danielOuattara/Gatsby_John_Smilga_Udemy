@@ -3,12 +3,13 @@ import { Layout } from "../../components";
 import styled from "styled-components";
 import { Link } from "gatsby";
 
-export default function Payments() {
+export default function Payments(props) {
+  console.log(props);
   return (
     <Layout>
       <Wrapper>
         <div>
-          <h1>path</h1>
+          <h1>path: {props.location.pathname}</h1>
           <Link to="/" className="btn">
             home
           </Link>

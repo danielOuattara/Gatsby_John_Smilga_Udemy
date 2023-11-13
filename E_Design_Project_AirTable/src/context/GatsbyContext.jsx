@@ -1,10 +1,10 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import sublinks from "../constants/links";
 
 const GatsbyContext = React.createContext();
 
 export default function GatsbyContextProvider(props) {
-  const [isSidebarOpen, setIsSidebarOpen] = useState(true);
+  const [isSidebarOpen, setIsSidebarOpen] = useState(false);
   const [links] = useState(sublinks);
 
   const toggleSidebar = () => setIsSidebarOpen(!isSidebarOpen);
@@ -24,6 +24,4 @@ export default function GatsbyContextProvider(props) {
 }
 
 // make sure use
-export const useGatsbyContext = () => {
-  return React.useContext(GatsbyContext);
-};
+export const useGatsbyContext = () => useContext(GatsbyContext);

@@ -11,7 +11,7 @@ export default function Navbar() {
     useGatsbyContext();
 
   const rootLinks = [...new Set(links.map((link) => link.page))];
-  console.log(rootLinks);
+
   return (
     <Wrapper>
       <div className="nav-center">

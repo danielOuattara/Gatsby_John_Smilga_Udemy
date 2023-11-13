@@ -15,7 +15,7 @@ export default function Sidebar() {
         </button>
         <div className="links">
           {links.map((link, index) => (
-            <Link key={index} to={link.url}>
+            <Link key={index} to={link.url} onClick={toggleSidebar}>
               {link.icon} {link.label}
             </Link>
           ))}
