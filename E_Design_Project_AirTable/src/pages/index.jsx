@@ -11,15 +11,13 @@ import {
 } from "../components";
 
 export default function HomePage(props) {
-  // console.log(props);
-
   const projects = props.data.projects.nodes;
-  // console.log("projects = ", projects);
   return (
     <Layout>
       <Hero />
       <About />
-      <Projects projects={projects} title={"latest projects"} />
+      {/* <Projects projects={projects} title={"latest projects"} /> */}
+      <GridProjects projects={projects} title={"latest projects"} />
       <Survey />
       <Slider customers={props.data.customers.nodes} />
     </Layout>
@@ -30,7 +28,7 @@ export const query = graphql`
   query {
     projects: allAirtable(
       filter: { table: { eq: "projects" } }
-      limit: 3
+      limit: 4
       sort: { data: { date: DESC } }
     ) {
       nodes {
