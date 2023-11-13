@@ -16,7 +16,7 @@ const Footer = () => {
   );
 };
 const Wrapper = styled.footer`
-  /* height: 5rem; */
+  height: 5rem;
   display: grid;
   place-items: center;
   background: var(--clr-black);
