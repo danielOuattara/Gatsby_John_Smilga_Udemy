@@ -16,8 +16,8 @@ export default function HomePage(props) {
     <Layout>
       <Hero />
       <About />
-      {/* <Projects projects={projects} title={"latest projects"} /> */}
-      <GridProjects projects={projects} title={"latest projects"} />
+      <Projects projects={projects} title={"latest projects"} />
+      {/* <GridProjects projects={projects} title={"latest projects"} /> */}
       <Survey />
       <Slider customers={props.data.customers.nodes} />
     </Layout>
@@ -44,6 +44,9 @@ export const query = graphql`
                   layout: CONSTRAINED
                   placeholder: DOMINANT_COLOR
                 )
+                internal {
+                  contentDigest
+                }
               }
             }
             internal {
@@ -66,6 +69,8 @@ export const query = graphql`
                 gatsbyImageData(
                   layout: CONSTRAINED
                   placeholder: DOMINANT_COLOR
+                  width: 150
+                  height: 150
                 )
               }
             }
