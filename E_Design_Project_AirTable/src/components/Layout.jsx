@@ -11,7 +11,7 @@ import { useGatsbyContext } from "../context/GatsbyContext";
 import "./global.css";
 
 export default function Layout(props) {
-  const { isSidebarOpen, setIsSidebarOpen, links } = useGatsbyContext();
+  const { isSidebarOpen } = useGatsbyContext();
 
   return (
     <>

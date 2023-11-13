@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React from "react";
 import styled from "styled-components";
 import logo from "../images/logo.svg";
 import GoThreeBars from "./../constants/GoThreebars";
@@ -7,8 +7,7 @@ import { NavLink } from "./index";
 import { useGatsbyContext } from "../context/GatsbyContext";
 
 export default function Navbar() {
-  const { isSidebarOpen, setIsSidebarOpen, links, toggleSidebar } =
-    useGatsbyContext();
+  const { links, toggleSidebar } = useGatsbyContext();
 
   const rootLinks = [...new Set(links.map((link) => link.page))];
 

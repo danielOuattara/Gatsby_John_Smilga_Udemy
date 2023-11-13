@@ -1,12 +1,11 @@
-import React, { useContext } from "react";
+import React from "react";
 import styled from "styled-components";
 import { MdClose } from "react-icons/md";
 import { Link } from "gatsby";
 import { useGatsbyContext } from "../context/GatsbyContext";
 
 export default function Sidebar() {
-  const { isSidebarOpen, setIsSidebarOpen, links, toggleSidebar } =
-    useGatsbyContext();
+  const { links, toggleSidebar } = useGatsbyContext();
   return (
     <Wrapper>
       <div className="container">

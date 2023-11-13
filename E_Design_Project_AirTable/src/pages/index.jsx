@@ -46,28 +46,31 @@ export const query = graphql`
                 )
               }
             }
+            internal {
+              contentDigest
+            }
           }
         }
       }
     }
     customers: allAirtable(filter: { table: { eq: "customers" } }) {
-      totalCount
       nodes {
         id
         data {
+          date
           name
-          quote
-          title
+          type
           image {
             localFiles {
               childImageSharp {
                 gatsbyImageData(
-                  layout: FIXED
-                  width: 150
-                  height: 150
+                  layout: CONSTRAINED
                   placeholder: DOMINANT_COLOR
                 )
               }
+            }
+            internal {
+              contentDigest
             }
           }
         }
