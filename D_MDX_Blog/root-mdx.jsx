@@ -6,7 +6,13 @@ const my_h1 = (props) => (
     A brand new heading h1
   </span>
 );
-const my_h2 = (props) => <h2 style={{ color: `red` }} {...props} />;
+const myH2 = (props) => {
+  if (props.title) {
+    return <h2 className="code" {...props} />;
+  } else {
+    <h2 className="code" {...props} />;
+  }
+};
 const my_h3 = (props) => <h3 style={{ color: `pink` }} {...props} />;
 const my_p = (props) => (
   <p style={{ fontSize: "18px", lineHeight: 1.6, color: "green" }} {...props} />
@@ -14,7 +20,7 @@ const my_p = (props) => (
 
 const components = {
   h1: my_h1,
-  h2: my_h2,
+  h2: myH2,
   h3: my_h3,
   p: my_p,
 };

@@ -13,7 +13,6 @@ import Title from "./Banner/Title";
 //--------------------------------------------------
 import Blockquote from "./Complete/Blockquote";
 import Code from "./Complete/Code";
-// import Complete from "./Complete/index";
 import Counter from "./Complete/Counter";
 import { myH2, myH4 } from "./Complete/Headings";
 import LikeButton from "./Complete/LikeButton";
