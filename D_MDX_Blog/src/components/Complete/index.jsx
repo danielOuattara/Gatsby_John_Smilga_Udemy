@@ -1,7 +1,7 @@
 import Counter from "./Counter";
 import LikeButton from "./LikeButton";
 import { RegularVideo, Video } from "./Video";
-import { myH2, myH4 } from "./Headings";
+import * as Headings from "./Headings";
 import Code from "./Code";
 import Blockquote from "./Blockquote";
 import PrismSetup from "./PrismSetup";
@@ -10,8 +10,9 @@ export {
   LikeButton,
   RegularVideo,
   Video,
-  myH2,
-  myH4,
+  // myH2,
+  // myH4,
+  Headings,
   Code,
   Blockquote,
   PrismSetup,

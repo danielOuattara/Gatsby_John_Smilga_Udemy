@@ -1,5 +1,5 @@
-import React from "react"
-import styled from "styled-components"
+import React from "react";
+import styled from "styled-components";
 
 const myH2 = ({ children, title }) => {
   if (title) {
@@ -8,7 +8,7 @@ const myH2 = ({ children, title }) => {
         <h2>{children}</h2>
         <div className="underline"></div>
       </HeadingTwo>
-    )
+    );
   }
   return (
     <h2
@@ -19,8 +19,9 @@ const myH2 = ({ children, title }) => {
     >
       {children}
     </h2>
-  )
-}
+  );
+};
+
 const HeadingTwo = styled.div`
   margin: 2rem 0;
   .underline {
@@ -28,13 +29,16 @@ const HeadingTwo = styled.div`
     height: 5px;
     background: var(--clr-primary-5);
   }
-`
-const myH4 = props => {
+`;
+
+//---
+
+const myH4 = (props) => {
   return (
     <h3 style={{ margin: "2rem 0", color: "var(--clr-primary-5)" }}>
       {props.children}
     </h3>
-  )
-}
+  );
+};
 
-export { myH2, myH4 }
+export { myH2, myH4 };
