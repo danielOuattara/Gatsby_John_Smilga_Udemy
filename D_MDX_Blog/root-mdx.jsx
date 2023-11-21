@@ -1,6 +1,6 @@
 import React from "react";
 import { MDXProvider } from "@mdx-js/react";
-import { Headings } from "./src/components/Complete";
+import { Headings, Code } from "./src/components/Complete";
 
 // const my_h1 = (props) => (
 //   <span style={{ color: `orange` }} {...props}>
@@ -19,9 +19,12 @@ import { Headings } from "./src/components/Complete";
 //   <p style={{ fontSize: "18px", lineHeight: 1.6, color: "green" }} {...props} />
 // );
 
+const Testing = ({ children }) => <Code>{children}</Code>;
+
 const components = {
   h2: Headings.myH2,
   h4: Headings.myH4,
+  inlineCode: Code,
 };
 
 export function wrapMDXRoot({ element }) {
