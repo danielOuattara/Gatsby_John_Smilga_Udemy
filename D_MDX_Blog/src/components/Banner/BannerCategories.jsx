@@ -4,7 +4,7 @@ import { Categories, Title } from "./../../components";
 const BannerCategories = () => {
   return (
     <Wrapper>
-      <Title title={"categories"} />
+      <Title title="categories" />
       <Categories />
     </Wrapper>
   );

@@ -1,7 +1,7 @@
 import React from "react";
 import { Hero, Layout, Posts } from "./../components";
 import { graphql } from "gatsby";
-import { RegularVideo } from "./../components";
+// import { RegularVideo } from "./../components";
 
 export default function IndexPage(props) {
   // console.log(props);
@@ -9,7 +9,7 @@ export default function IndexPage(props) {
     <Layout>
       <Hero showPerson />
       {/* <RegularVideo /> */}
-      <Posts title={"recently published"} posts={props.data.allMdx.nodes} />
+      <Posts title="recently published" posts={props.data.allMdx.nodes} />
     </Layout>
   );
 }

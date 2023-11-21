@@ -12,9 +12,6 @@ import "./../css/main.css";
 export default function Layout({ children }) {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
 
-  //  const toggleSidebar = () => {
-  //    setIsSidebarOpen(!isSidebarOpen);
-  //  };
   return (
     <>
       <Navbar

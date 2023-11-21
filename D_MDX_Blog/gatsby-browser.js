@@ -1,21 +1,5 @@
 /* https://www.gatsbyjs.com/docs/reference/config-files/gatsby-browser/#wrapRootElement */
-import "./src/css/main.css";
 
-import React from "react";
-import { MDXProvider } from "@mdx-js/react";
+import { wrapMDXRoot } from "./root-mdx";
 
-/* h": () => ... not acting on screen */
-
-const components = {
-  // all the logic here
-  h3: () => <span>I am a magic h3</span>,
-  h2: (props) => {
-    console.log(props);
-    return <h2>title</h2>;
-  },
-};
-
-export function wrapRootElement({ element }) {
-  console.log("HELLO =======================");
-  return <MDXProvider components={components}>{element}</MDXProvider>;
-}
+export const wrapRootElement = wrapMDXRoot;

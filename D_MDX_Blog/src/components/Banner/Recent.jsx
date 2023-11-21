@@ -30,7 +30,7 @@ export default function Recent() {
   // console.log(data);
   return (
     <Wrapper>
-      <Title title={"recent posts"} />
+      <Title title="recent posts" />
       {data.allMdx.nodes.map((post) => (
         <Link
           to={`/posts/${post.frontmatter.slug}`}

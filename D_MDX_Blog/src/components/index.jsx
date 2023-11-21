@@ -13,9 +13,9 @@ import Title from "./Banner/Title";
 //--------------------------------------------------
 import Blockquote from "./Complete/Blockquote";
 import Code from "./Complete/Code";
-import Complete from "./Complete";
+// import Complete from "./Complete/index";
 import Counter from "./Complete/Counter";
-import Headings from "./Complete/Headings";
+import { myH2, myH4 } from "./Complete/Headings";
 import LikeButton from "./Complete/LikeButton";
 import PrismSetup from "./Complete/PrismSetup";
 import { Video, RegularVideo } from "./Complete";
@@ -39,9 +39,11 @@ export {
   //--
   Blockquote,
   Code,
-  Complete,
+  // Complete,
   Counter,
-  Headings,
+  // Headings,
+  myH2,
+  myH4,
   LikeButton,
   PrismSetup,
   Video,

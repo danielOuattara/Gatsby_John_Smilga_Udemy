@@ -7,7 +7,7 @@ export default function PostsPage(props) {
   return (
     <Layout>
       <Hero />
-      <Posts title={"all posts"} posts={props.data.allMdx.nodes} />
+      <Posts title="all posts" posts={props.data.allMdx.nodes} />
     </Layout>
   );
 }
