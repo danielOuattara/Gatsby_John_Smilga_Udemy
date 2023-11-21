@@ -1,8 +1,7 @@
 import React from "react";
 import { Highlight, themes } from "prism-react-renderer";
-export default function Example(props) {
-  //   console.log("props = ", props);
 
+export default function Example(props) {
   const codeBlock = props.children.props.children.trim();
   const language = props.children.props.className
     .replace(/language-/, "")
