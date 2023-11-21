@@ -9,17 +9,18 @@ const myH2 = ({ children, title }) => {
         <div className="underline"></div>
       </HeadingTwo>
     );
+  } else {
+    return (
+      <h2
+        style={{
+          margin: "2rem 0",
+          color: "var(--clr-grey-5)",
+        }}
+      >
+        {children}
+      </h2>
+    );
   }
-  return (
-    <h2
-      style={{
-        margin: "2rem 0",
-        color: "var(--clr-grey-5)",
-      }}
-    >
-      {children}
-    </h2>
-  );
 };
 
 const HeadingTwo = styled.div`

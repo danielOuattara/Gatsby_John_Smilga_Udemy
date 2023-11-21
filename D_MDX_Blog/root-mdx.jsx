@@ -21,9 +21,7 @@ import { Headings } from "./src/components/Complete";
 
 const components = {
   h2: Headings.myH2,
-  // h2: myH2,
-  // h3: my_h3,
-  // p: my_p,
+  h4: Headings.myH4,
 };
 
 export function wrapMDXRoot({ element }) {
