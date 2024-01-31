@@ -1,8 +1,8 @@
 import * as React from "react";
 import Layout from "./../components/Layout";
 
-// import ImagesExample1 from "../components/examples/ImagesExample1";
-// import ImagesExample2 from "../components/examples/ImagesExample2";
+import ImagesExample1 from "../components/examples/ImagesExample1";
+import ImagesExample2 from "../components/examples/ImagesExample2";
 
 import { StaticImage } from "gatsby-plugin-image";
 
@@ -27,7 +27,7 @@ export default function Home() {
             </div>
           </header>
           {/* ---------------------- */}
-          {/* <ImagesExample1 /> */}
+          <ImagesExample1 />
           {/* <ImagesExample2 /> */}
           {/* ---------------------- */}
         </main>
